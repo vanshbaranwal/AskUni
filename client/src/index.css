@@ -1,4 +1,7 @@
-
+/*removing scroll bar*/
+body::-webkit-scrollbar {
+  display: none;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -168,17 +171,14 @@ body{
 .Navbar_wapper{
     display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: 20vh;
     padding: 20px 5%;
 }
 
 .container {
     min-height: 100vh;
     display: flex;
-   
-  
     scroll-behavior: smooth;
-    
     font-family:'Helvetica Neue', sans-serif;
     
 }
@@ -379,7 +379,6 @@ h1 a {
 }
 
 .Landing_page_info {
-    font-weight: 600;
     font-family: 'Helvetica Neue', sans-serif;
     height: 80vh;
     width: 100vw;
@@ -454,7 +453,7 @@ h1 a {
     background-size: 200% auto;
     color: white;
    
-    border-radius: 10px;
+    border-radius: 30px;
     display: block;
     border-style: none;
 }
