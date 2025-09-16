@@ -8,12 +8,13 @@ export default function ChatInput({ messages, setMessages }) {
     if (!input.trim()) return;
 
     const userMessage = { role: "user", content: input };
-    setMessages([...messages, userMessage]);
+    setMessages((prev) => [...prev, userMessage]); // ✅ use functional update
 
     try {
-      const res = await axios.post("https://askuni.onrender.com/", {
-        message: input,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/chat`, // ✅ call proper route
+        { message: input }
+      );
 
       const botMessage = {
         role: "bot",
@@ -21,13 +22,14 @@ export default function ChatInput({ messages, setMessages }) {
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
+      console.error(error); // ✅ useful for debugging
       setMessages((prev) => [
         ...prev,
         { role: "bot", content: "Error connecting to server" },
       ]);
+    } finally {
+      setInput(""); // ✅ clear input at the end
     }
-
-    setInput("");
   };
 
   return (
