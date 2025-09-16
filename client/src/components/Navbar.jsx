@@ -8,7 +8,7 @@ function Navbar() {
             
                 <div className="Navbar_wapper">
                     <div>
-                        <img className="logo" srcSet="src\assets\logo.png" alt="" srcset="" width="50px" />
+                        <img className="logo" srcSet="src\assets\logo.png" alt=""  width="50px" />
                     </div>
                     <div className="container">
                         
