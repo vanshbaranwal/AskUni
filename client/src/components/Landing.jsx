@@ -56,10 +56,10 @@ function Landing_page() {
             </div>
             <div className="Landing_page_info">
                 <div className="wrapper_heading">
-                    <h1>AskUni
+                    <h1>AI Powered Multilingual Campus Assistant
 
                     </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem culpa dolorum quod excepturi, accusamus quasi ab eligendi, ducimus doloremque, iure consequuntur. libero.</p>
+                    <p>Ready to chat? Your queries, your language — Hindi, English, Rajasthani, and 3+ regional languages</p>
                     <button className="chat-button" onClick={goToChat}>Chat</button>
                 </div>
             </div>

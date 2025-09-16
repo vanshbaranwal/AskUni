@@ -46,32 +46,32 @@ function Feaature() {
             </div>
             <div className=" Feature_wrapper ">
                 <div className="feature-title">
-                    <h1>Our Feature</h1>
+                    <h1>Features</h1>
                 </div>
                 <div className="feature-grid">
                     <div className="feature-card">
-                        <h2>AI-Powered Q&amp;A</h2>
-                        <p>Get instant answers from our smart AI chatbot.</p>
+                        <h2>Seamless Integration</h2>
+                        <p>Designed to embed easily into the college website</p>
                     </div>
                     <div className="feature-card">
-                        <h2>University Search</h2>
-                        <p>Find the best universities worldwide in seconds.</p>
+                        <h2>Smart FAQ Integration</h2>
+                        <p> Dropdown for quick access to frequent queries</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Scholarship Finder</h2>
-                        <p>Discover scholarships tailored to your profile.</p>
+                        <h2>Institution-Specific Knowledge Base</h2>
+                        <p>Trained on circulars, PDFs, notices, timetable, fees, etc</p>
                         </div>
                     <div className="feature-card">
-                        <h2>Application Guidance</h2>
-                        <p>Step-by-step help for admissions and documents.</p>
+                        <h2>Updatable Knowledge Base</h2>
+                        <p>The bot’s information can be easily updated to stay relevant</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Community Support</h2>
-                        <p>Connect with students and alumni for advice.</p>
+                        <h2>Cost Effective</h2>
+                        <p>Low infrastructure requirement (basic server + cloud)</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Personalized Dashboard</h2>
-                        <p>Track applications, deadlines, and progress.</p>
+                        <h2>Privacy by Design</h2>
+                        <p>Students often hesitate to ask “silly” doubts in front of others</p>
                     </div>
                 </div>
 

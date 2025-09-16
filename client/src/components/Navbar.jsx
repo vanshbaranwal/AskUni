@@ -7,8 +7,9 @@ function Navbar() {
             {/* This is where you can add compnent for home screen*/}
             
                 <div className="Navbar_wapper">
-                    <div>
+                    <div className="logo_container">
                         <img className="logo" srcSet="src\assets\logo.png" alt=""  width="50px" />
+                        <h3>AskUni</h3>
                     </div>
                     <div className="container">
                         
