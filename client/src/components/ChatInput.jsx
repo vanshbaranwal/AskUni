@@ -12,7 +12,7 @@ export default function ChatInput({ messages, setMessages }) {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/chat`, // ✅ call proper route
+        `${import.meta.env.VITE_API_URL}/api/chat`, // ✅ call proper route
         { message: input }
       );
 
