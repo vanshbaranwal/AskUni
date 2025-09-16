@@ -3,22 +3,41 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing_page from "./components/Landing";
 import Feaature from "./components/Feature";
+import { SignIn, SignUp } from "@clerk/clerk-react";
+import ProtectedRoute from "./components/ProtectedRoute"; // <-- import it
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <Landing_page />
-            <Feaature />
-          </>
-        } />
-        <Route path="/chat" element={<Chat />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Landing_page />
+              <Feaature />
+            </>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <ProtectedRoute>
+              <Chat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sign-in"
+          element={<SignIn routing="path" path="/sign-in" />}
+        />
+        <Route
+          path="/sign-up"
+          element={<SignUp routing="path" path="/sign-up" />}
+        />
       </Routes>
     </Router>
-
   );
 }
 

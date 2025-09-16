@@ -1,70 +1,74 @@
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 
-
 function Landing_page() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const goToChat = () => {
-        navigate("/chat");
-    };
-    return (
-        <>
+  const goToChat = () => {
+    navigate("/chat");
+  };
 
+  return (
+    <>
+      {/* Animation Background */}
+      <div className="Animation_wrapper">
+        <svg className="bloob1" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_29_22)">
+            <path d="M343.014 245.475C279.042 295.461 59.2215 315.926 13.4857 257.393C-32.25 198.86 113.418 83.4944 177.391 33.5082C241.363 -16.4781 330.3 -9.54967 376.036 48.9832C421.771 107.516 406.987 195.488 343.014 245.475Z" fill="url(#paint0_linear_29_22)" />
+          </g>
+          <defs>
+            <filter id="filter0_d_29_22" x="0.751465" y="0.118164" width="405.853" height="300.897" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_29_22" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_29_22" result="shape" />
+            </filter>
+            <linearGradient id="paint0_linear_29_22" x1="376.036" y1="48.9832" x2="49.8121" y2="303.884" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#43D9C0" />
+              <stop offset="0.5" stopColor="#4DD0BB" />
+              <stop offset="1" stopColor="#53ADED" />
+            </linearGradient>
+          </defs>
+        </svg>
 
-            <div className="Animation_wrapper">
+        <svg className="bloob2" height="300" viewBox="0 0 544 498" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_43_4)">
+            <path d="M273.57 392.222C195.12 371.326 83.4082 215.287 102.527 143.507C121.646 71.7276 253.735 106.131 332.186 127.027C410.637 147.923 458.734 223.052 439.615 294.831C420.496 366.611 352.021 413.118 273.57 392.222Z" fill="#FF9FEA" />
+          </g>
+          <defs>
+            <filter id="filter0_f_43_4" x="0.362793" y="0.201294" width="543.444" height="497.049" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_43_4" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
 
+      {/* Landing Page Content */}
+      <div className="Landing_page_info">
+        <div className="wrapper_heading">
+          <h1>AI Powered Multilingual Campus Assistant</h1>
+          <p>Ready to chat? Your queries, your language — Hindi, English, Rajasthani, and 3+ regional languages</p>
 
-                <svg className="bloob1" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d_29_22)">
-                        <path d="M343.014 245.475C279.042 295.461 59.2215 315.926 13.4857 257.393C-32.25 198.86 113.418 83.4944 177.391 33.5082C241.363 -16.4781 330.3 -9.54967 376.036 48.9832C421.771 107.516 406.987 195.488 343.014 245.475Z" fill="url(#paint0_linear_29_22)" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_d_29_22" x="0.751465" y="0.118164" width="405.853" height="300.897" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                            <feOffset dy="4" />
-                            <feGaussianBlur stdDeviation="2" />
-                            <feComposite in2="hardAlpha" operator="out" />
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_29_22" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_29_22" result="shape" />
-                        </filter>
-                        <linearGradient id="paint0_linear_29_22" x1="376.036" y1="48.9832" x2="49.8121" y2="303.884" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#43D9C0" />
-                            <stop offset="0.5" stopColor="#4DD0BB" />
-                            <stop offset="1" stopColor="#53ADED" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <svg className="bloob2" height="300" viewBox="0 0 544 498" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_43_4)">
-                        <path d="M273.57 392.222C195.12 371.326 83.4082 215.287 102.527 143.507C121.646 71.7276 253.735 106.131 332.186 127.027C410.637 147.923 458.734 223.052 439.615 294.831C420.496 366.611 352.021 413.118 273.57 392.222Z" fill="#FF9FEA" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_f_43_4" x="0.362793" y="0.201294" width="543.444" height="497.049" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_43_4" />
-                        </filter>
-                    </defs>
-                </svg>
+          {/* Chat Button */}
+          <SignedIn>
+            <button className="chat-button" onClick={goToChat}>Chat</button>
+          </SignedIn>
 
-
-
-
-
-            </div>
-            <div className="Landing_page_info">
-                <div className="wrapper_heading">
-                    <h1>AI Powered Multilingual Campus Assistant
-
-                    </h1>
-                    <p>Ready to chat? Your queries, your language — Hindi, English, Rajasthani, and 3+ regional languages</p>
-                    <button className="chat-button" onClick={goToChat}>Chat</button>
-                </div>
-            </div>
-        </>
-    )
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="chat-button">Chat</button>
+            </SignInButton>
+          </SignedOut>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Landing_page;
