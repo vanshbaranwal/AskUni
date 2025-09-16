@@ -185,11 +185,9 @@ body{
 .logo_container{
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
-.logo_container h3{
-  margin-top: 51px;
-}
+
 
 h1 a {
   font-size: 40px;
@@ -299,7 +297,7 @@ h1 a {
 }
 
 .logo, .handburger{
-  margin-top: 28px;
+  margin-top: 10px;
 }
 
 @keyframes grow {
@@ -544,11 +542,11 @@ h1 a {
 
 .bloob-f-1{
   position: relative;
-  top:70%;
+  top:50%;
 }
 .bloob-f-2{
   position: relative;
-  top: 100%;
+  top: 60%;
   left: 20%;
 }
 
