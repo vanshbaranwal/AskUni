@@ -576,3 +576,12 @@ h1 a {
   height: 40px;
   object-fit: contain;
 }
+
+/* auth button */
+
+.auth-btn button {
+  margin:  12px 10px;
+}
+.cl-internal-1erfakr {
+  height: 18px;
+}
