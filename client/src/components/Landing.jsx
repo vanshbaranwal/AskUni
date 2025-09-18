@@ -1,5 +1,6 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 function Landing_page() {
   const navigate = useNavigate();
@@ -7,6 +8,7 @@ function Landing_page() {
   const goToChat = () => {
     navigate("/chat");
   };
+  const { t} = useTranslation()
 
   return (
     <>
@@ -52,17 +54,17 @@ function Landing_page() {
       {/* Landing Page Content */}
       <div className="Landing_page_info">
         <div className="wrapper_heading">
-          <h1>AI Powered Multilingual Campus Assistant</h1>
-          <p>Ready to chat? Your queries, your language — Hindi, English, Rajasthani, and 3+ regional languages</p>
+          <h1>{t("heroText")}</h1>
+          <p>{t("spanText")}</p>
 
           {/* Chat Button */}
           <SignedIn>
-            <button className="chat-button" onClick={goToChat}>Chat</button>
+            <button className="chat-button" onClick={goToChat}>{t("btnText")}</button>
           </SignedIn>
 
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="chat-button">Chat</button>
+              <button className="chat-button">{t("btnText")}</button>
             </SignInButton>
           </SignedOut>
         </div>

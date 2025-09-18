@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 function Feaature() {
+    const { t} = useTranslation()
     return (
         <>
             <div className="Animation_wrapper">
@@ -46,32 +49,32 @@ function Feaature() {
             </div>
             <div className=" Feature_wrapper ">
                 <div className="feature-title">
-                    <h1>Features</h1>
+                    <h1>{t("FeatureHeading")}</h1>
                 </div>
                 <div className="feature-grid">
                     <div className="feature-card">
-                        <h2>Seamless Integration</h2>
-                        <p>Designed to embed easily into the college website</p>
+                        <h2>{t("Feature1H")}</h2>
+                        <p>{t("Feature1")}</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Smart FAQ Integration</h2>
-                        <p> Dropdown for quick access to frequent queries</p>
+                        <h2>{t("Feature2H")}</h2>
+                        <p>{t("Feature2")}</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Institution-Specific Knowledge Base</h2>
-                        <p>Trained on circulars, PDFs, notices, timetable, fees, etc</p>
-                        </div>
-                    <div className="feature-card">
-                        <h2>Updatable Knowledge Base</h2>
-                        <p>The bot’s information can be easily updated to stay relevant</p>
+                        <h2>{t("Feature3H")}</h2>
+                        <p>{t("Feature3")}</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Cost Effective</h2>
-                        <p>Low infrastructure requirement (basic server + cloud)</p>
+                        <h2>{t("Feature4H")}</h2>
+                        <p>{t("Feature4")}</p>
                     </div>
                     <div className="feature-card">
-                        <h2>Privacy by Design</h2>
-                        <p>Students often hesitate to ask “silly” doubts in front of others</p>
+                        <h2>{t("Feature5H")}</h2>
+                        <p>{t("Feature5")}</p>
+                    </div>
+                    <div className="feature-card">
+                        <h2>{t("Feature6H")}</h2>
+                        <p>{t("Feature6")}</p>
                     </div>
                 </div>
 

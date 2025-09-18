@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { ClerkProvider } from "@clerk/clerk-react";
+import './i18.js';
 
 const clerkPublicKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 

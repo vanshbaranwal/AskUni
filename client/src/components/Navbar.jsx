@@ -1,6 +1,9 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import LanguageSelector from "./language";
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
+  const { t} = useTranslation();
   return (
     <div className="Navbar_wapper">
       {/* Logo Section */}
@@ -21,7 +24,7 @@ function Navbar() {
           </defs>
         </svg>
 
-        <h3>AskUni</h3>
+        <h3>{t("logoTxt")}</h3>
       </div>
 
       {/* Menu and Auth Section */}
@@ -30,7 +33,7 @@ function Navbar() {
         <div className="auth-btn" style={{ marginLeft: "15px" }}>
           <SignedOut>
             <SignInButton mode="modal" redirectUrl="/chat">
-              Sign Up / Login
+              {t("login")}
             </SignInButton>
           </SignedOut>
 
@@ -38,6 +41,7 @@ function Navbar() {
             <UserButton />
           </SignedIn>
         </div>
+        <LanguageSelector />
 
         {/* Hamburger */}
         <a className="handburger" href="#menu">
