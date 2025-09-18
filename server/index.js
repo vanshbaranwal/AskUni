@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import collegeInfo from "./data/collegeInfo.js";
 
 dotenv.config();
 
@@ -23,8 +24,39 @@ app.get("/", (req, res) => {
 
 app.post("/api/chat", (req, res) => {
   const { message } = req.body;
+  const lowerMsg = message.toLowerCase();
 
-  res.json({ reply: `You said: ${message}` });
+  let reply = "Sorry, I don’t have information about that. Please contact the college directly.";
+
+  // Fee-related responses
+  if (lowerMsg.includes("hello") || lowerMsg.includes("hi") || lowerMsg.includes("hey")) {
+  reply = "Hello 👋 Welcome to AskUni! How can I help you today?";
+}else if (lowerMsg.includes("bba") && lowerMsg.includes("fee")) {
+    reply = collegeInfo.fee.bba;
+  } else if (lowerMsg.includes("bca") && lowerMsg.includes("fee")) {
+    reply = collegeInfo.fee.bca;
+  } else if (lowerMsg.includes("bsc") && lowerMsg.includes("fee")) {
+    reply = collegeInfo.fee.bsc;
+  } else if (lowerMsg.includes("mba") && lowerMsg.includes("fee")) {
+    reply = collegeInfo.fee.mba;
+  } else if (lowerMsg.includes("fee")) {
+    reply = "We offer multiple courses. Please specify (BBA, BCA, B.Sc, or MBA).";
+  }
+
+  // Other info
+  else if (lowerMsg.includes("hostel")) {
+    reply = collegeInfo.hostel;
+  } else if (lowerMsg.includes("admission")) {
+    reply = collegeInfo.admission;
+  } else if (lowerMsg.includes("placement")) {
+    reply = collegeInfo.placement;
+  } else if (lowerMsg.includes("library")) {
+    reply = collegeInfo.library;
+  } else if (lowerMsg.includes("contact") || lowerMsg.includes("phone")) {
+    reply = collegeInfo.contact;
+  }
+
+  res.json({ reply });
 });
 
 const PORT = process.env.PORT || 5000;
