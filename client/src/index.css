@@ -662,7 +662,3 @@ width: 70px;
    }
 
 }
-html, body {
-  overflow-x: hidden;
-  position: relative;
-}
