@@ -488,7 +488,7 @@ h1 a {
 }
 
 .feature-card {
-    height: 220px;
+    height: 250px;
     background: 0 6px 16px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -500,6 +500,11 @@ h1 a {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     border: 2px solid transparent;
+}
+
+.feature-logo{
+  height: 65px;
+  padding-bottom: 10px;
 }
 
 .feature-card p{

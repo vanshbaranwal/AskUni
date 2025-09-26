@@ -5,6 +5,7 @@ import Landing_page from "./components/Landing";
 import Feaature from "./components/Feature";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import ProtectedRoute from "./components/ProtectedRoute"; // <-- import it
+import Team from "./components/Team";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Navbar />
               <Landing_page />
               <Feaature />
+              <Team />
             </>
           }
         />

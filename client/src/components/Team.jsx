@@ -7,7 +7,7 @@ import cost_icon from "/icons/profits.png";
 import privacy_icon from "/icons/privacy.png";
 
 
-function Feaature() {
+function Team() {
     const { t} = useTranslation()
     return (
         <>
@@ -56,38 +56,38 @@ function Feaature() {
             </div>
             <div className=" Feature_wrapper ">
                 <div className="feature-title">
-                    <h1>{t("FeatureHeading")}</h1>
+                    <h1>Team</h1>
                 </div>
                 <div className="feature-grid">
                     <div className="feature-card">
                         <img className='feature-logo' src={integration_icon} alt="" srcset="" />
-                        <h2>{t("Feature1H")}</h2>
-                        <p>{t("Feature1")}</p>
+                        <h2>Rudraksha Keshari</h2>
+                        <p>Front-End,Back-End</p>
                     </div>
                     <div className="feature-card">
                         <img className='feature-logo' src={faq_icon} alt="" srcset="" />
-                        <h2>{t("Feature2H")}</h2>
-                        <p>{t("Feature2")}</p>
+                        <h2>Ayaan Iqbal</h2>
+                        <p>Front-End,Back-End</p>
                     </div>
                     <div className="feature-card">
                         <img className='feature-logo' src={university_icon} alt="" srcset="" />
-                        <h2>{t("Feature3H")}</h2>
-                        <p>{t("Feature3")}</p>
+                        <h2>Vansh Baranwal</h2>
+                        <p>AI/ML</p>
                     </div>
                     <div className="feature-card">
                         <img className='feature-logo' src={knowledge_icon} alt="" srcset="" />
-                        <h2>{t("Feature4H")}</h2>
-                        <p>{t("Feature4")}</p>
+                        <h2>Rahul Gautam</h2>
+                        <p>Researcher and Mangement</p>
                     </div>
                     <div className="feature-card">
                         <img className='feature-logo' src={cost_icon} alt="" srcset="" />
-                        <h2>{t("Feature5H")}</h2>
-                        <p>{t("Feature5")}</p>
+                        <h2>Suhani Yadav</h2>
+                        <p>Front-End,Back-End</p>
                     </div>
                     <div className="feature-card">
                         <img className='feature-logo' src={privacy_icon} alt="" srcset="" />
-                        <h2>{t("Feature6H")}</h2>
-                        <p>{t("Feature6")}</p>
+                        <h2>Pranjali Keshari</h2>
+                        <p>Researcher and Mangaement </p>
                     </div>
                 </div>
 
@@ -95,4 +95,5 @@ function Feaature() {
         </>
     )
 }
-export default Feaature;
+
+export default Team;
