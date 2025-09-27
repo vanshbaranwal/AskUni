@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 import collegeInfo from "./data/collegeInfo.js";
 import axios from "axios"; // website active dependencies
+import { spawn } from "child_process"; 
+import path from "path";
+
 
 //This is code make active the website in render
 const url = `https://askuni-seven.vercel.app/`;
@@ -36,8 +39,55 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.get("/", (req, res) => {
+
+
+// function to execute script.py file in python folder 
+
+const executePython = async (script, args) => {
+    const argsList  = args.map(arg => arg.toString()); //argsList = arguments
+    const pythonPath = path.join(__dirname, '.venv', 'Scripts', 'python.exe');
+    
+    const py = spawn(pythonPath, [script, ...argsList]);
+    const result = await new Promise((res, rej) => {
+        let output = '';
+        
+        py.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+        
+        py.stderr.on("data", (data) => {
+            console.error(`[python] error occured : ${data}`);
+            rej(`error occured in ${script}`);
+        });
+        
+        py.on("exit", (code) => {
+            console.log(`child process exited with code ${code}`);
+            
+            // Try to parse as JSON, if it fails, treat as plain text
+            try {
+                const jsonOutput = JSON.parse(output.trim());
+                res(jsonOutput);
+            } catch (e) {
+                // If not JSON, return as plain text
+                res({ message: output.trim(), status: "success" });
+            }
+        });
+    });
+    return result;
+}
+
+
+
+app.get("/", async (req, res) => {
   res.send("Backend is running 🚀");
+
+  // fetching the pinecone data from the from script.py.
+  try {
+      const result = await executePython(`python/script.py`);
+      res.json({result: result})
+  } catch (error) {
+      res.status(500).json({error: error})
+  }
 });
 
 app.post("/api/chat", (req, res) => {
