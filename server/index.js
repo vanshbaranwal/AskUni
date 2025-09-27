@@ -5,7 +5,7 @@ import collegeInfo from "./data/collegeInfo.js";
 import axios from "axios"; // website active dependencies
 
 //This is code make active the website in render
-const url = `https://render-hosting-se2b.onrender.com`;
+const url = `https://askuni-seven.vercel.app/`;
 const interval = 30000;
 
 function reloadWebsite() {
