@@ -6,6 +6,7 @@ import Feaature from "./components/Feature";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import ProtectedRoute from "./components/ProtectedRoute"; // <-- import it
 import Team from "./components/Team";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Landing_page />
               <Feaature />
               <Team />
+              < Footer />
             </>
           }
         />
