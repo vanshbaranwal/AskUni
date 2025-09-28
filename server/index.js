@@ -5,6 +5,7 @@ import collegeInfo from "./data/collegeInfo.js";
 import axios from "axios"; // website active dependencies
 import { spawn } from "child_process"; 
 import path from "path";
+import { Pinecone } from "@pinecone-database/pinecone";
 
 
 //This is code make active the website in render
@@ -41,42 +42,6 @@ app.use(cors({
 app.use(express.json());
 
 
-// function to execute script.py file in python folder 
-
-const executePython = async (script, args) => {
-    const argsList  = args.map(arg => arg.toString()); //argsList = arguments
-    const pythonPath = path.join(__dirname, '.venv', 'Scripts', 'python.exe');
-    
-    const py = spawn(pythonPath, [script, ...argsList]);
-    const result = await new Promise((res, rej) => {
-        let output = '';
-        
-        py.stdout.on('data', (data) => {
-            output += data.toString();
-        });
-        
-        py.stderr.on("data", (data) => {
-            console.error(`[python] error occured : ${data}`);
-            rej(`error occured in ${script}`);
-        });
-        
-        py.on("exit", (code) => {
-            console.log(`child process exited with code ${code}`);
-            
-            // Try to parse as JSON, if it fails, treat as plain text
-            try {
-                const jsonOutput = JSON.parse(output.trim());
-                res(jsonOutput);
-            } catch (e) {
-                // If not JSON, return as plain text
-                res({ message: output.trim(), status: "success" });
-            }
-        });
-    });
-    return result;
-}
-
-
 
 app.get("/", async (req, res) => {
   res.send("Backend is running 🚀");
@@ -90,41 +55,37 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.post("/api/chat", (req, res) => {
+
+app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
   const lowerMsg = message.toLowerCase();
 
+  //setup of pinecone
+  const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
+  const assistant = pc.assistant("askuni");
   let reply = "Sorry, I don’t have information about that. Please contact the college directly.";
+  //getting information from pinnecone
+  try {
+    console.log("Asking the question:", lowerMsg);
 
-  // Fee-related responses
-  if (lowerMsg.includes("hello") || lowerMsg.includes("hi") || lowerMsg.includes("hey")) {
-  reply = "Hello 👋 Welcome to AskUni! How can I help you today?";
-}else if (lowerMsg.includes("bba") && lowerMsg.includes("fee")) {
-    reply = collegeInfo.fee.bba;
-  } else if (lowerMsg.includes("bca") && lowerMsg.includes("fee")) {
-    reply = collegeInfo.fee.bca;
-  } else if (lowerMsg.includes("bsc") && lowerMsg.includes("fee")) {
-    reply = collegeInfo.fee.bsc;
-  } else if (lowerMsg.includes("mba") && lowerMsg.includes("fee")) {
-    reply = collegeInfo.fee.mba;
-  } else if (lowerMsg.includes("fee")) {
-    reply = "We offer multiple courses. Please specify (BBA, BCA, B.Sc, or MBA).";
+    const response = await assistant.chat({
+      messages: [{ role: "user", content: lowerMsg }],
+    });
+
+    console.log(" Getting the Full response:", JSON.stringify(response, null, 2));
+
+    // Correctly extract the answer from message.content
+    reply = response?.message?.content || "No answer returned.";
+    console.log("Answer:", reply);
+    
+    res.json({ reply });
+
+    
+  } catch (error) {
+    console.error("❌ Detailed error:", error);
+    
   }
-
-  // Other info
-  else if (lowerMsg.includes("hostel")) {
-    reply = collegeInfo.hostel;
-  } else if (lowerMsg.includes("admission")) {
-    reply = collegeInfo.admission;
-  } else if (lowerMsg.includes("placement")) {
-    reply = collegeInfo.placement;
-  } else if (lowerMsg.includes("library")) {
-    reply = collegeInfo.library;
-  } else if (lowerMsg.includes("contact") || lowerMsg.includes("phone")) {
-    reply = collegeInfo.contact;
-  }
-
-  res.json({ reply });
+  
 });
 
 const PORT = process.env.PORT || 5000;

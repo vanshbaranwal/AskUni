@@ -16,6 +16,7 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "@pinecone-database/pinecone": "^6.1.2",
     "axios": "^1.12.2",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",

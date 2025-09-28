@@ -748,3 +748,8 @@ width: 70px;
     line-height: 1.6;
     margin-bottom: 0;
 }
+
+/*making white space re appar*/
+.message{
+white-space: pre-wrap;
+}
