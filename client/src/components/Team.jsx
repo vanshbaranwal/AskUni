@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import integration_icon from "/icons/system.png";
-import faq_icon from "/icons/faq.png";
-import university_icon from "/icons/university.png";
-import knowledge_icon from "/icons/knowledge-base.png";
-import cost_icon from "/icons/profits.png";
-import privacy_icon from "/icons/privacy.png";
+import rudraksha_img from "/team-photo/rudraksha.png";
+import ayaan_img from "/team-photo/ayaan.jpg";
+import vansh_img from "/team-photo/vansh.jpg";
+import rahul_img from "/team-photo/rahul.jpeg";
+import suhani_img from "/team-photo/suhani.jpg";
+import pranjali_img from "/team-photo/pranjali.jpg";
 
 
 function Team() {
@@ -56,38 +56,38 @@ function Team() {
             </div>
             <div className=" Feature_wrapper ">
                 <div className="feature-title">
-                    <h1>Team</h1>
+                    <h1>{t("team")}</h1>
                 </div>
                 <div className="feature-grid">
-                    <div className="feature-card">
-                        <img className='feature-logo' src={integration_icon} alt="" srcset="" />
-                        <h2>Rudraksha Keshari</h2>
-                        <p>Front-End,Back-End</p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={rudraksha_img } alt="" srcset="" />
+                        <h2>{t("t1")}</h2>
+                        <p><b>{t("role")}</b>{t("r1")}</p>
                     </div>
-                    <div className="feature-card">
-                        <img className='feature-logo' src={faq_icon} alt="" srcset="" />
-                        <h2>Ayaan Iqbal</h2>
-                        <p>Front-End,Back-End</p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={ayaan_img} alt="" srcset="" />
+                        <h2>{t("t2")}</h2>
+                        <p><b>{t("role")}</b>{t("r2")}</p>
                     </div>
-                    <div className="feature-card">
-                        <img className='feature-logo' src={university_icon} alt="" srcset="" />
-                        <h2>Vansh Baranwal</h2>
-                        <p>AI/ML</p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={vansh_img} alt="" srcset="" />
+                        <h2>{t("t3")}</h2>
+                        <p><b>{t("role")}</b>{t("r3")}</p>
                     </div>
-                    <div className="feature-card">
-                        <img className='feature-logo' src={knowledge_icon} alt="" srcset="" />
-                        <h2>Rahul Gautam</h2>
-                        <p>Researcher and Mangement</p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={rahul_img } alt="" srcset="" />
+                        <h2>{t("t4")}</h2>
+                        <p><b>{t("role")}</b>{t("r4")}</p>
                     </div>
-                    <div className="feature-card">
-                        <img className='feature-logo' src={cost_icon} alt="" srcset="" />
-                        <h2>Suhani Yadav</h2>
-                        <p>Front-End,Back-End</p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={suhani_img } alt="" srcset="" />
+                        <h2>{t("t5")}</h2>
+                        <p><b>{t("role")}</b>{t("r5")}</p>
                     </div>
-                    <div className="feature-card">
-                        <img className='feature-logo' src={privacy_icon} alt="" srcset="" />
-                        <h2>Pranjali Keshari</h2>
-                        <p>Researcher and Mangaement </p>
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={pranjali_img} alt="" srcset="" />
+                        <h2>{t("t6")}</h2>
+                        <p><b>{t("role")}</b>{t("r6")}</p>
                     </div>
                 </div>
 

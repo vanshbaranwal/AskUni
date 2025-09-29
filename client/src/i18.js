@@ -9,11 +9,19 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
     resources : {
         en:{
             translation :{
+                home:"HOME",
+                about:"ABOUT",
+                team:"TEAM",
+                chat:"CHAT",
+                contact:"CONTACT",
+                github:"github",
+
                 logoTxt:"AskUni",
                 login:"Sign-Up / Login",
                 heroText:"AI Powered Multilingual Campus Assistant",
                 spanText:"Ready to chat? Your queries, your language — Hindi, English, Rajasthani, and 3+ regional languages",
                 btnText:"chat",
+
                 FeatureHeading:"Features",
                 Feature1H:"Seamless Integration",
                 Feature1:"Designed to embed easily into the college website",
@@ -27,10 +35,34 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature5:"Low infrastructure requirement (basic server + cloud)",
                 Feature6H:"Privacy by Design",
                 Feature6:"Students often hesitate to ask “silly” doubts in front of others",
+
+                team:"Team",
+                role:"Role:",
+                t1:"Rudraksha Keshari",
+                r1:"Front-End,Back-End",
+                t2:"Ayaan Iqbal",
+                r2:"Front-End,Back-End",
+                t3:"Vansh Baranwal",
+                r3:"AI/ML",
+                t4:"Rahul Gautam",
+                r4:"Researcher and Mangement",
+                t5:"Suhani Yadav",
+                r5:"Front-End",
+                t6:"Pranjali Keshari",
+                r6:"Researcher and Mangaement"
+
             }
         },
         hi:{
             translation :{
+                home:"घर",
+                about:"के बारे में",
+                team:"टीम",
+                chat:"बात करना",
+                contact:"संपर्क",
+                github:"गिटहब",
+
+
                 logoTxt:"आस्कयूनि",
                 login:"दाखल / लॉगिन",
                 heroText:"एआई समर्थित बहुभाषी कैंपस सहायक  ",
@@ -49,11 +81,33 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature5:"कम इन्फ्रास्ट्रक्चर की आवश्यकता (साधारण सर्वर + क्लाउड)।",
                 Feature6H:" प्राइवेसी बाय डिज़ाइन ",
                 Feature6:"छात्र अक्सर साधारण सवाल दूसरों के सामने पूछने में संकोच करते हैं।",
+                
+                team:"टीम",
+                role:"भूमिका:",
+                t1:"रुद्राक्ष केशरी",
+                r1:"फ्रंट-एंड, बैक-एंड",
+                t2:"अयान इकबाल",
+                r2:"फ्रंट-एंड, बैक-एंड",
+                t3:"Vansh Baranwal",
+                r3:"एआई/एमएल",
+                t4:"राहुल गौतम",
+                r4:"शोधकर्ता और प्रबंधन",
+                t5:"सुहानी यादव",
+                r5:"फ्रंट-एंड",
+                t6:"प्रांजलि केशरी",
+                r6:"शोधकर्ता और प्रबंधन"
             }
 
         },
         rj:{
             translation :{
+                home:"घर",
+                about:"के बारे में",
+                team:"टीम",
+                chat:"बात करना",
+                contact:"संपर्क",
+                github:"गिटहब",
+
                 logoTxt:"आस्कयूनि",
                 login:"दाखल / लॉगिन",
                 heroText:"ए.आई. चालित बहुभाषी कैंपस सहायको",
@@ -71,7 +125,23 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature5H:"सस्ता अर फायदेमंद",
                 Feature5:"कम ढांचा चाही (बेसिक सर्वर + क्लाउड)।",
                 Feature6H:"गोपनीयता री रचना",
-                Feature6:"विद्यार्थी अकसर दूसरां री आगर “साधा” सवाल पूछण सूं झिझकता है।"
+                Feature6:"विद्यार्थी अकसर दूसरां री आगर “साधा” सवाल पूछण सूं झिझकता है।",
+
+                
+                team:"टीम",
+                role:"भूमिका:",
+                t1:"रुद्राक्ष केशरी",
+                r1:"फ्रंट-एंड, बैक-एंड",
+                t2:"अयान इकबाल",
+                r2:"फ्रंट-एंड, बैक-एंड",
+                t3:"Vansh Baranwal",
+                r3:"एआई/एमएल",
+                t4:"राहुल गौतम",
+                r4:"शोधकर्ता और प्रबंधन",
+                t5:"सुहानी यादव",
+                r5:"फ्रंट-एंड",
+                t6:"प्रांजलि केशरी",
+                r6:"शोधकर्ता और प्रबंधन"
             }
         }
     }

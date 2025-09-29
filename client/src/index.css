@@ -753,3 +753,17 @@ width: 70px;
 .message{
 white-space: pre-wrap;
 }
+
+/* team section css */
+
+.team-img{
+  margin-bottom: 20px;
+  height: 120px;
+  width: 120px;
+  border-radius: 10000px;
+}
+
+.img-card{
+      height: 350px;
+    
+}

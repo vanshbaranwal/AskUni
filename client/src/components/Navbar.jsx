@@ -64,11 +64,11 @@ function Navbar() {
             <a href="#" className="close"></a>
             <div className="nav">
               <ul className="nav_list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">{t("home")}</a></li>
+                <li><a href="#">{t("about")}</a></li>
+                <li><a href="#">{t("team")}</a></li>
+                <li><a href="#">{t("chat")}</a></li>
+                <li><a href="#">{t("contact")}</a></li>
               </ul>
             </div>
           </div>
