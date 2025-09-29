@@ -3,16 +3,23 @@ import axios from "axios";
 
 export default function ChatInput({ messages, setMessages }) {
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     const userMessage = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]); // ✅ use functional update
+    setMessages((prev) => [...prev, userMessage]);
+    setInput(""); // clear immediately after sending
+    setLoading(true);
+
+    // Add temporary bot "typing" message
+    const typingMessage = { role: "bot", content: "typing..." };
+    setMessages((prev) => [...prev, typingMessage]);
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/chat`, // ✅ call proper route
+        `${import.meta.env.VITE_API_URL}/api/chat`,
         { message: input }
       );
 
@@ -20,15 +27,20 @@ export default function ChatInput({ messages, setMessages }) {
         role: "bot",
         content: res.data.reply || "No response",
       };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error(error); // ✅ useful for debugging
+
+      // Replace typing message with real response
       setMessages((prev) => [
-        ...prev,
+        ...prev.slice(0, -1), // remove "typing"
+        botMessage,
+      ]);
+    } catch (error) {
+      console.error(error);
+      setMessages((prev) => [
+        ...prev.slice(0, -1), // remove "typing"
         { role: "bot", content: "Error connecting to server" },
       ]);
     } finally {
-      setInput(""); // ✅ clear input at the end
+      setLoading(false);
     }
   };
 
@@ -41,7 +53,9 @@ export default function ChatInput({ messages, setMessages }) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
       />
-      <button onClick={sendMessage}>Send</button>
+      <button onClick={sendMessage} disabled={loading}>
+        {loading ? "..." : "Send"}
+      </button>
     </div>
   );
 }
