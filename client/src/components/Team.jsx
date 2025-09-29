@@ -60,34 +60,57 @@ function Team() {
                 </div>
                 <div className="feature-grid">
                     <div className="img-card feature-card">
-                        <img className='team-img' src={rudraksha_img } alt="" srcset="" />
-                        <h2>{t("t1")}</h2>
-                        <p><b>{t("role")}</b>{t("r1")}</p>
+                        <img className='team-img' src={vansh_img} alt="" srcset="" />
+                        <h2>{t("t3")}</h2>
+                        <div className="role-container">
+                        <b>{t("role")}</b>
+                        <p>{t("r3")}</p>
+                        </div>
                     </div>
+                    
                     <div className="img-card feature-card">
                         <img className='team-img' src={ayaan_img} alt="" srcset="" />
                         <h2>{t("t2")}</h2>
-                        <p><b>{t("role")}</b>{t("r2")}</p>
+                        <div className="role-container">
+                            <b>{t("role")}</b>
+                            <p>{t("r2")}</p>
+                        </div>
+                        
                     </div>
                     <div className="img-card feature-card">
-                        <img className='team-img' src={vansh_img} alt="" srcset="" />
-                        <h2>{t("t3")}</h2>
-                        <p><b>{t("role")}</b>{t("r3")}</p>
+                        <img className='team-img' src={rudraksha_img } alt="" srcset="" />
+                        <h2>{t("t1")}</h2>
+                        <div className="role-container">
+                            <b>{t("role")}</b>
+                            <p>{t("r1")}</p>
+                        </div>
                     </div>
                     <div className="img-card feature-card">
                         <img className='team-img' src={rahul_img } alt="" srcset="" />
                         <h2>{t("t4")}</h2>
-                        <p><b>{t("role")}</b>{t("r4")}</p>
+                        <div className="role-container">
+                        <b>{t("role")}</b>
+                        <p>{t("r4")}</p>
+                        </div>
+                    </div>
+                    
+                    <div className="img-card feature-card">
+                        <img className='team-img' src={pranjali_img} alt="" srcset="" />
+                        <h2>{t("t6")}</h2>
+                        <div className="role-container">
+                        <b>{t("role")}</b>
+                        <p>{t("r6")}</p>
+                        </div>
                     </div>
                     <div className="img-card feature-card">
                         <img className='team-img' src={suhani_img } alt="" srcset="" />
                         <h2>{t("t5")}</h2>
-                        <p><b>{t("role")}</b>{t("r5")}</p>
-                    </div>
-                    <div className="img-card feature-card">
-                        <img className='team-img' src={pranjali_img} alt="" srcset="" />
-                        <h2>{t("t6")}</h2>
-                        <p><b>{t("role")}</b>{t("r6")}</p>
+                         <div className="role-container">
+
+                         
+                        <b>{t("role")}</b>
+                        <p>{t("r5")}</p>
+                        </div>
                     </div>
                 </div>
 

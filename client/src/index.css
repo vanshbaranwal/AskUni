@@ -767,3 +767,7 @@ white-space: pre-wrap;
       height: 350px;
     
 }
+
+.role-container >p{
+  margin: 5px;
+}

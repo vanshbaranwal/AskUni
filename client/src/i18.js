@@ -37,25 +37,25 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature6:"Students often hesitate to ask “silly” doubts in front of others",
 
                 team:"Team",
-                role:"Role:",
+                role:"Role",
                 t1:"Rudraksha Keshari",
-                r1:"Front-End,Back-End",
+                r1:"Frontend & Backend",
                 t2:"Ayaan Iqbal",
-                r2:"Front-End,Back-End",
+                r2:"Backend",
                 t3:"Vansh Baranwal",
                 r3:"AI/ML",
                 t4:"Rahul Gautam",
-                r4:"Researcher and Mangement",
+                r4:"Researcher",
                 t5:"Suhani Yadav",
-                r5:"Front-End",
+                r5:"UI/UX design",
                 t6:"Pranjali Keshari",
-                r6:"Researcher and Mangaement"
+                r6:"Documentation & testing"
 
             }
         },
         hi:{
             translation :{
-                home:"घर",
+                home:"होम",
                 about:"के बारे में",
                 team:"टीम",
                 chat:"बात करना",
@@ -83,25 +83,25 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature6:"छात्र अक्सर साधारण सवाल दूसरों के सामने पूछने में संकोच करते हैं।",
                 
                 team:"टीम",
-                role:"भूमिका:",
+                role:"भूमिका",
                 t1:"रुद्राक्ष केशरी",
-                r1:"फ्रंट-एंड, बैक-एंड",
+                r1:"फ्रंटएंड एवं बैकएंड",
                 t2:"अयान इकबाल",
-                r2:"फ्रंट-एंड, बैक-एंड",
-                t3:"Vansh Baranwal",
+                r2:"बैकएंड",
+                t3:"वंश बरनवाल",
                 r3:"एआई/एमएल",
                 t4:"राहुल गौतम",
-                r4:"शोधकर्ता और प्रबंधन",
+                r4:"शोधकर्ता ",
                 t5:"सुहानी यादव",
-                r5:"फ्रंट-एंड",
+                r5:"यूआई/यूएक्स डिज़ाइन",
                 t6:"प्रांजलि केशरी",
-                r6:"शोधकर्ता और प्रबंधन"
+                r6:"दस्तावेज़ीकरण एवं परीक्षण"
             }
 
         },
         rj:{
             translation :{
-                home:"घर",
+                home:"होम",
                 about:"के बारे में",
                 team:"टीम",
                 chat:"बात करना",
@@ -129,19 +129,19 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
 
                 
                 team:"टीम",
-                role:"भूमिका:",
+                role:"भूमिका",
                 t1:"रुद्राक्ष केशरी",
-                r1:"फ्रंट-एंड, बैक-एंड",
+                r1:"फ्रंटएंड एवं बैकएंड",
                 t2:"अयान इकबाल",
-                r2:"फ्रंट-एंड, बैक-एंड",
-                t3:"Vansh Baranwal",
+                r2:"बैकएंड",
+                t3:"वंश बरनवाल",
                 r3:"एआई/एमएल",
                 t4:"राहुल गौतम",
-                r4:"शोधकर्ता और प्रबंधन",
+                r4:"शोधकर्ता ",
                 t5:"सुहानी यादव",
-                r5:"फ्रंट-एंड",
+                r5:"यूआई/यूएक्स डिज़ाइन",
                 t6:"प्रांजलि केशरी",
-                r6:"शोधकर्ता और प्रबंधन"
+                r6:"दस्तावेज़ीकरण एवं परीक्षण"
             }
         }
     }

@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import collegeInfo from "./data/collegeInfo.js";
 import axios from "axios"; // website active dependencies
 import { spawn } from "child_process"; 
 import path from "path";
