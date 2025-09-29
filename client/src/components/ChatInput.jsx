@@ -12,7 +12,18 @@ export default function ChatInput({ messages, setMessages }) {
     setMessages((prev) => [...prev, userMessage]);
     setInput(""); 
     setLoading(true);
-    const typingMessage = { role: "bot", content: "typing..." };
+
+    // Replace "typing..." with div typing
+    const typingMessage = { 
+      role: "bot", 
+      content: (
+        <div className="typing">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>
+      ) 
+    };
     setMessages((prev) => [...prev, typingMessage]);
 
     try {
@@ -26,7 +37,7 @@ export default function ChatInput({ messages, setMessages }) {
         content: res.data.reply || "No response",
       };
 
-      // Replace typing message with real response
+      // Replace typing div with real response
       setMessages((prev) => [
         ...prev.slice(0, -1),
         botMessage,
@@ -34,7 +45,7 @@ export default function ChatInput({ messages, setMessages }) {
     } catch (error) {
       console.error(error);
       setMessages((prev) => [
-        ...prev.slice(0, -1), // remove "typing"
+        ...prev.slice(0, -1), // remove typing
         { role: "bot", content: "Error connecting to server" },
       ]);
     } finally {
