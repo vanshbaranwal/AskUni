@@ -10,10 +10,8 @@ export default function ChatInput({ messages, setMessages }) {
 
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
-    setInput(""); // clear immediately after sending
+    setInput(""); 
     setLoading(true);
-
-    // Add temporary bot "typing" message
     const typingMessage = { role: "bot", content: "typing..." };
     setMessages((prev) => [...prev, typingMessage]);
 
@@ -30,7 +28,7 @@ export default function ChatInput({ messages, setMessages }) {
 
       // Replace typing message with real response
       setMessages((prev) => [
-        ...prev.slice(0, -1), // remove "typing"
+        ...prev.slice(0, -1),
         botMessage,
       ]);
     } catch (error) {
