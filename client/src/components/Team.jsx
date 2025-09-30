@@ -106,7 +106,7 @@ function Team() {
                         <b>{t("role")}</b>
                         <p>{t("r4")}</p>
                         <div className='link-logo'>
-                            <a href="www.linkedin.com/in/rahul-gautam-97772129a" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/rahul-gautam-97772129a/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
                             <a href="https://github.com/rahulgautam2004" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
                         </div>
                         </div>
