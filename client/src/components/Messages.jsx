@@ -9,6 +9,8 @@ export default function Messages({ messages }) {
 
   return (
     <div className="messages">
+      <div class="message bot">Hi there! 👋 I’m AskUni, here to make student life at Microtek College, Varanasi easier 🏫.
+No more searching PDFs or standing in queues — just ask me about fees, admissions, classes, scholarships, events, and I’ll answer instantly in your preferred language.</div>
       {messages.map((msg, i) => (
         <div
           key={i}

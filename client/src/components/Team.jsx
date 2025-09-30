@@ -5,6 +5,8 @@ import vansh_img from "/team-photo/vansh.jpg";
 import rahul_img from "/team-photo/rahul.jpeg";
 import suhani_img from "/team-photo/suhani.jpg";
 import pranjali_img from "/team-photo/pranjali.jpg";
+import linkedin from "/icons/linkedin (1).png";
+import githubicon from "/icons/github.png";
 
 
 function Team() {
@@ -65,6 +67,10 @@ function Team() {
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r3")}</p>
+                        <div className='link-logo'>
+                            <a href="https://www.linkedin.com/in/vanshbaranwal/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://github.com/vanshbaranwal" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
                         </div>
                     </div>
                     
@@ -74,6 +80,10 @@ function Team() {
                         <div className="role-container">
                             <b>{t("role")}</b>
                             <p>{t("r2")}</p>
+                            <div className='link-logo'>
+                            <a href="https://www.linkedin.com/in/ayaaniqbalprofile/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://github.com/AyaanIqbal0" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
                         </div>
                         
                     </div>
@@ -83,6 +93,10 @@ function Team() {
                         <div className="role-container">
                             <b>{t("role")}</b>
                             <p>{t("r1")}</p>
+                            <div className='link-logo'>
+                            <a href="https://www.linkedin.com/in/rudraksha-keshari-1b7441204/" target='_blank' ><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://github.com/RudrakshaRK" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
                         </div>
                     </div>
                     <div className="img-card feature-card">
@@ -91,6 +105,10 @@ function Team() {
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r4")}</p>
+                        <div className='link-logo'>
+                            <a href="https://github.com/rahulgautam2004" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="www.linkedin.com/in/rahul-gautam-97772129a" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
                         </div>
                     </div>
                     
@@ -100,6 +118,10 @@ function Team() {
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r6")}</p>
+                        <div className='link-logo'>
+                            <a href="https://www.linkedin.com/in/pranjali-keshari-3bb343282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://github.com/Pranjalikeshari" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
                         </div>
                     </div>
                     <div className="img-card feature-card">
@@ -110,6 +132,11 @@ function Team() {
                          
                         <b>{t("role")}</b>
                         <p>{t("r5")}</p>
+                        <div className='link-logo'>
+                            <a href="https://www.linkedin.com/in/suhani-yadav-32b409313/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
+                            <a href="https://github.com/suhani1005" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                        </div>
+                        
                         </div>
                     </div>
                 </div>
