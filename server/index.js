@@ -29,10 +29,7 @@ dotenv.config();
 const app = express();
 
 
-app.get("/active", (req, res) => {
-  console.log("I am active");
-  res.send("Backend received the request!");
-});
+
 
 //CORS configuration
 app.use(cors({
