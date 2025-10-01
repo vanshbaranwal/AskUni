@@ -104,6 +104,27 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
+// Delete a chat by its ID
+app.delete("/api/chats/:userId/:chatId", async (req, res) => {
+  let { userId, chatId } = req.params;
+
+  // Trim the chatId to remove whitespace or newlines
+  chatId = chatId.trim();
+
+  try {
+    const chat = await Chat.findOne({ _id: chatId, userId });
+    if (!chat) return res.status(404).json({ message: "Chat not found" });
+
+    await chat.deleteOne(); // remove the chat
+    res.status(200).json({ message: "Chat deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting chat:", error);
+    res.status(500).json({ message: "Failed to delete chat" });
+  }
+});
+
+
+
 // Start server 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

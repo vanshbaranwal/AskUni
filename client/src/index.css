@@ -65,6 +65,30 @@ body, html, #root {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  /* Extra styling for layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-preview div {
+  flex: 1;
+  cursor: pointer;
+}
+
+.chat-preview button {
+  padding: 4px 8px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chat-preview button:hover {
+  background-color: #e9555c;
 }
 
 /* Main chat area */
