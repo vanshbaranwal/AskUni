@@ -827,3 +827,15 @@ white-space: pre-wrap;
     background-color: #6eacee;
   }
 }
+
+.link-logo >a> img{
+  height: 30px;
+  display: inline-block;
+  padding: 5px;
+
+}
+
+.role-container{
+  padding-top: 16px;
+}
+
