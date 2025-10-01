@@ -202,7 +202,7 @@ h1 a {
 }
 
 .popover:target {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   width: 100%;
@@ -210,6 +210,7 @@ h1 a {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .popover .content {
@@ -299,6 +300,12 @@ h1 a {
 .logo, .handburger{
   margin-top: 10px;
   margin-left: 10px;
+  width: 30px;
+}
+
+.handburger-icon{
+  position: fixed;
+  z-index: 10;
 }
 
 @keyframes grow {

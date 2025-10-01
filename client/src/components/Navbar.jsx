@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const { t } = useTranslation();
+  
   return (
     <div className="Navbar_wapper">
       {/* Logo Section */}
@@ -76,7 +77,7 @@ function Navbar() {
 
         {/* Hamburger */}
         <a className="handburger" href="#menu">
-          <svg
+          <svg className="handburger-icon"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -90,7 +91,7 @@ function Navbar() {
         {/* Popover Menu */}
         <div className="popover" id="menu">
           <div className="content">
-            <a href="#" className="close"></a>
+            <a href="#/" className="close"></a>
             <div className="nav">
               <ul className="nav_list">
                 <li>
@@ -116,5 +117,11 @@ function Navbar() {
     </div>
   );
 }
+
+// document.querySelector('.close').addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevents the default action of the link
+//     // Add your custom logic here, if any
+// });
+
 
 export default Navbar;
