@@ -7,8 +7,17 @@ import { SignIn, SignUp } from "@clerk/clerk-react";
 import ProtectedRoute from "./components/ProtectedRoute"; // <-- import it
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import axios from "axios";
+import { useEffect } from "react";
+
 
 function App() {
+  useEffect(() => {
+    // call backend as soon as frontend loads
+    axios.get("https://askuni-seven.vercel.app/active")
+      .then((res) => console.log("Frontend got response:", res.data))
+      .catch((err) => console.error(err));
+  }, []);
   return (
     <Router>
       <Routes>
