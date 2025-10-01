@@ -10,7 +10,7 @@ import pranjali_img from "/team-photo/pranjali.jpg";
 function Team() {
     const { t} = useTranslation()
     return (
-        <>
+        <section id="team">
             <div className="Animation_wrapper">
 
 
@@ -115,7 +115,7 @@ function Team() {
                 </div>
 
             </div>
-        </>
+        </section>
     )
 }
 
