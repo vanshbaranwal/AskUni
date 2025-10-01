@@ -19,9 +19,6 @@ setInterval(reloadWebsite, interval);
 dotenv.config();
 const app = express();
 
-
-
-
 // CORS configuration
 app.use(cors({
   origin: [
