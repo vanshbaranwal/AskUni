@@ -10,9 +10,9 @@ export default function Chat() {
   const { user } = useUser();
   const currentUserId = user?.id;
 
-  const [chatHistory, setChatHistory] = useState([]);   // list of chats
-  const [activeChatIndex, setActiveChatIndex] = useState(null); // which chat is open
-  const [messages, setMessages] = useState([]);         // messages of active chat
+  const [chatHistory, setChatHistory] = useState([]);   
+  const [activeChatIndex, setActiveChatIndex] = useState(null); 
+  const [messages, setMessages] = useState([]);         
 
   // Load chat history from backend on mount
   useEffect(() => {
@@ -20,9 +20,7 @@ export default function Chat() {
 
     const fetchChats = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/chats/${currentUserId}`
-        );
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/chats/${currentUserId}`);
         setChatHistory(res.data);
       } catch (err) {
         console.error("Failed to fetch chat history:", err);
@@ -36,8 +34,8 @@ export default function Chat() {
     if (messages.length > 0) {
       setChatHistory([...chatHistory, { userId: currentUserId, messages }]);
     }
-    setMessages([]);            
-    setActiveChatIndex(null);   
+    setMessages([]);
+    setActiveChatIndex(null);
   };
 
   const loadChat = (index) => {
@@ -49,8 +47,13 @@ export default function Chat() {
     <div className="chat-app">
       <Sidebar
         chatHistory={chatHistory}
+        setChatHistory={setChatHistory}
         startNewChat={startNewChat}
         loadChat={loadChat}
+        currentUserId={currentUserId}
+        activeChatIndex={activeChatIndex}
+        setMessages={setMessages}
+        setActiveChatIndex={setActiveChatIndex}
       />
       <div className="main-chat">
         <ChatHeader />
