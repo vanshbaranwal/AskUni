@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 import Feaature from "./components/Feature";
 
 i18next.use(LanguageDetector).use(initReactI18next).init({
-    debug: true,
+    debug: false,
     lng: "en",
     resources : {
         en:{

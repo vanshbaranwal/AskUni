@@ -203,9 +203,9 @@ h1 a {
 
 .popover:target {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -554,13 +554,14 @@ h1 a {
 /* feature-section bloob code */
 
 .bloob-f-1{
-  position: relative;
-  top:50%;
+  position: absolute;
+  transform: translate(-414px , 60px);
+  filter: blur(70px);
 }
 .bloob-f-2{
-  position: relative;
-  top: 60%;
-  left: 20%;
+  position: absolute;
+  transform: translate(210px , 30px);
+  filter: blur(70px);
 }
 
 /* new my code */
@@ -671,6 +672,12 @@ width: 70px;
    }
    .handburger{
     margin-left: 5px !important;
+   }
+   .bloob-f-1{
+    transform: translate(0px, 300px);
+   }
+   .bloob-f-2{
+    transform: translate(0px, -400px);
    }
 
 }
@@ -846,3 +853,6 @@ white-space: pre-wrap;
   padding-top: 16px;
 }
 
+body{
+  margin: 0;
+}

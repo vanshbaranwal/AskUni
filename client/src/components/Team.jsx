@@ -13,9 +13,11 @@ function Team() {
     const { t} = useTranslation()
     return (
         <section id="team">
-            <div className="Animation_wrapper">
-
-
+            
+            <div className=" Feature_wrapper ">
+                <div className="feature-title">
+                    <h1>{t("team")}</h1>
+                </div>
                 <svg className="bloob-f-1" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_29_22)">
                         <path d="M343.014 245.475C279.042 295.461 59.2215 315.926 13.4857 257.393C-32.25 198.86 113.418 83.4944 177.391 33.5082C241.363 -16.4781 330.3 -9.54967 376.036 48.9832C421.771 107.516 406.987 195.488 343.014 245.475Z" fill="url(#paint0_linear_29_22)" />
@@ -50,82 +52,72 @@ function Team() {
                         </filter>
                     </defs>
                 </svg>
-
-
-
-
-
-            </div>
-            <div className=" Feature_wrapper ">
-                <div className="feature-title">
-                    <h1>{t("team")}</h1>
-                </div>
                 <div className="feature-grid">
                     <div className="img-card feature-card">
-                        <img className='team-img' src={vansh_img} alt="" srcset="" />
+                        <img className='team-img' src={vansh_img} alt="" srcSet="" />
                         <h2>{t("t3")}</h2>
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r3")}</p>
                         <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/vanshbaranwal/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/vanshbaranwal" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/vanshbaranwal/" target='_blank'><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/vanshbaranwal" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         </div>
                     </div>
                     
                     <div className="img-card feature-card">
-                        <img className='team-img' src={ayaan_img} alt="" srcset="" />
+                        <img className='team-img' src={ayaan_img} alt="" srcSet="" />
                         <h2>{t("t2")}</h2>
                         <div className="role-container">
                             <b>{t("role")}</b>
                             <p>{t("r2")}</p>
                             <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/ayaaniqbalprofile/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/AyaanIqbal0" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/ayaaniqbalprofile/" target='_blank'><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/AyaanIqbal0" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         </div>
                         
                     </div>
                     <div className="img-card feature-card">
-                        <img className='team-img' src={rudraksha_img } alt="" srcset="" />
+                        <img className='team-img' src={rudraksha_img } alt="" srcSet="" />
                         <h2>{t("t1")}</h2>
                         <div className="role-container">
                             <b>{t("role")}</b>
                             <p>{t("r1")}</p>
                             <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/rudraksha-keshari-1b7441204/" target='_blank' ><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/RudrakshaRK" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/rudraksha-keshari-1b7441204/" target='_blank' ><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/RudrakshaRK" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         </div>
                     </div>
                     <div className="img-card feature-card">
-                        <img className='team-img' src={rahul_img } alt="" srcset="" />
+                        <img className='team-img' src={rahul_img } alt="" srcSet="" />
                         <h2>{t("t4")}</h2>
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r4")}</p>
                         <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/rahul-gautam-97772129a/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/rahulgautam2004" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/rahul-gautam-97772129a/" target='_blank'><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/rahulgautam2004" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         </div>
                     </div>
                     
                     <div className="img-card feature-card">
-                        <img className='team-img' src={pranjali_img} alt="" srcset="" />
+                        <img className='team-img' src={pranjali_img} alt="" srcSet="" />
                         <h2>{t("t6")}</h2>
                         <div className="role-container">
                         <b>{t("role")}</b>
                         <p>{t("r6")}</p>
                         <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/pranjali-keshari-3bb343282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/Pranjalikeshari" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/pranjali-keshari-3bb343282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank'><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/Pranjalikeshari" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         </div>
                     </div>
                     <div className="img-card feature-card">
-                        <img className='team-img' src={suhani_img } alt="" srcset="" />
+                        <img className='team-img' src={suhani_img } alt="" srcSet="" />
                         <h2>{t("t5")}</h2>
                          <div className="role-container">
 
@@ -133,8 +125,8 @@ function Team() {
                         <b>{t("role")}</b>
                         <p>{t("r5")}</p>
                         <div className='link-logo'>
-                            <a href="https://www.linkedin.com/in/suhani-yadav-32b409313/" target='_blank'><img src={linkedin} alt="" srcset="" /></a>
-                            <a href="https://github.com/suhani1005" target='_blank'><img src={githubicon} alt="" srcset="" /></a>
+                            <a href="https://www.linkedin.com/in/suhani-yadav-32b409313/" target='_blank'><img src={linkedin} alt="" srcSet="" /></a>
+                            <a href="https://github.com/suhani1005" target='_blank'><img src={githubicon} alt="" srcSet="" /></a>
                         </div>
                         
                         </div>

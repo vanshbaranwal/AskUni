@@ -7,6 +7,7 @@ import {
 import LanguageSelector from "./language";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -38,9 +39,9 @@ function Navbar() {
               y2="473"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#42E2C7" />
-              <stop offset="0.5" stop-color="#4DCCD0" />
-              <stop offset="1" stop-color="#37ACFF" />
+              <stop stopColor="#42E2C7" />
+              <stop offset="0.5" stopColor="#4DCCD0" />
+              <stop offset="1" stopColor="#37ACFF" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_34_2"
@@ -50,8 +51,8 @@ function Navbar() {
               y2="246.624"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#42E2C7" />
-              <stop offset="1" stop-color="#4DCCD0" />
+              <stop stopColor="#42E2C7" />
+              <stop offset="1" stopColor="#4DCCD0" />
             </linearGradient>
           </defs>
         </svg>

@@ -21,9 +21,9 @@ const LanguageSelector = () => {
 
   return (
     <>
-      <div class="dropdown">
-        <button class="dropbtn">English</button>
-        <div class="dropdown-content">
+      <div className="dropdown">
+        <button className="dropbtn">English</button>
+        <div className="dropdown-content">
           <div className="btn-container">
             {languages.map((lng) => {
               return (
