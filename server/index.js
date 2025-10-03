@@ -37,16 +37,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error(" MongoDB connection error:", err));
 
 //Root Route
-app.get("/", async (req, res) => {
-  res.send("Backend is running");
 
-  try {
-    const result = await executePython(`python/script.py`);
-    console.log("Python script result:", result);
-  } catch (error) {
-    console.error("Python script error:", error);
-  }
-});
 
 //Fetch chat history
 app.get("/api/chats/:userId", async (req, res) => {
