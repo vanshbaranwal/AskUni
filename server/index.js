@@ -124,6 +124,10 @@ app.delete("/api/chats/:userId/:chatId", async (req, res) => {
 });
 
 
+app.post("/active", (req, res) => {
+  console.log("I am active", { ip: req.ip, origin: req.get("origin"), body: req.body });
+  res.json({ message: "Backend is active!" });
+});
 
 // Start server 
 const PORT = process.env.PORT || 5000;

@@ -12,11 +12,16 @@ import { useEffect } from "react";
 
 
 function App() {
+
+  
+  
   useEffect(() => {
-    // call backend as soon as frontend loads
-    axios.get("https://askuni-seven.vercel.app/active")
+    const API_URL = import.meta.env.VITE_API_URL;
+
+    axios.post(`${API_URL}/active`, { ping: "frontend" })
       .then((res) => console.log("Frontend got response:", res.data))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error("Error calling backend:", err));
+
   }, []);
   return (
     <Router>

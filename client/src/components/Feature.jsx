@@ -60,8 +60,8 @@ function Feaature() {
                     </defs>
                 </svg>
 
-                <div className="feature-grid">
-                    <div className="feature-card">
+                <div className="feature-grid ">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={integration_icon} alt="" srcSet="" />
                         <h2>{t("Feature1H")}</h2>
                         <p>{t("Feature1")}</p>
@@ -97,4 +97,17 @@ function Feaature() {
         </>
     )
 }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+});
+
+const hiidenElemnt = document.querySelectorAll(".hidden")
+hiidenElemnt.forEach((el) => observer.observe(el)) 
 export default Feaature;
