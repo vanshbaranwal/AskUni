@@ -37,7 +37,11 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error(" MongoDB connection error:", err));
 
 //Root Route
+app.get("/", async (req, res) => {
+  res.send("Backend is running");
 
+  
+});
 
 //Fetch chat history
 app.get("/api/chats/:userId", async (req, res) => {
