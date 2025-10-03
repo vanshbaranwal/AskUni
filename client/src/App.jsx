@@ -9,6 +9,7 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 import axios from "axios";
 import { useEffect } from "react";
+import Loading from "./components/Loading";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           path="/"
           element={
             <>
+              <Loading />
               <Navbar />
               <Landing_page />
               <Feaature />

@@ -7,10 +7,25 @@ import suhani_img from "/team-photo/suhani.jpg";
 import pranjali_img from "/team-photo/pranjali.jpg";
 import linkedin from "/icons/linkedin (1).png";
 import githubicon from "/icons/github.png";
+import { useEffect } from "react";
 
 
 function Team() {
     const { t} = useTranslation()
+    useEffect(() => {
+        // your script runs once on mount
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            } 
+          });
+        });
+    
+        // observe everything with class 'hidden'
+        document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
+      }, []); // empty array = run once (like <script> on page load)
     return (
         <section id="team">
             
@@ -53,7 +68,7 @@ function Team() {
                     </defs>
                 </svg>
                 <div className="feature-grid">
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden">
                         <img className='team-img' src={vansh_img} alt="" srcSet="" />
                         <h2>{t("t3")}</h2>
                         <div className="role-container">
@@ -66,7 +81,7 @@ function Team() {
                         </div>
                     </div>
                     
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden">
                         <img className='team-img' src={ayaan_img} alt="" srcSet="" />
                         <h2>{t("t2")}</h2>
                         <div className="role-container">
@@ -79,7 +94,7 @@ function Team() {
                         </div>
                         
                     </div>
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden">
                         <img className='team-img' src={rudraksha_img } alt="" srcSet="" />
                         <h2>{t("t1")}</h2>
                         <div className="role-container">
@@ -91,7 +106,7 @@ function Team() {
                         </div>
                         </div>
                     </div>
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden">
                         <img className='team-img' src={rahul_img } alt="" srcSet="" />
                         <h2>{t("t4")}</h2>
                         <div className="role-container">
@@ -104,7 +119,7 @@ function Team() {
                         </div>
                     </div>
                     
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden">
                         <img className='team-img' src={pranjali_img} alt="" srcSet="" />
                         <h2>{t("t6")}</h2>
                         <div className="role-container">
@@ -116,7 +131,7 @@ function Team() {
                         </div>
                         </div>
                     </div>
-                    <div className="img-card feature-card">
+                    <div className="img-card feature-card hidden" >
                         <img className='team-img' src={suhani_img } alt="" srcSet="" />
                         <h2>{t("t5")}</h2>
                          <div className="role-container">

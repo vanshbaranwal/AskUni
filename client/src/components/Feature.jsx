@@ -5,10 +5,26 @@ import university_icon from "/icons/university.png";
 import knowledge_icon from "/icons/knowledge-base.png";
 import cost_icon from "/icons/profits.png";
 import privacy_icon from "/icons/privacy.png";
+import { useEffect } from "react";
 
 
 function Feaature() {
     const { t} = useTranslation()
+     useEffect(() => {
+    // your script runs once on mount
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } 
+      });
+    });
+
+    // observe everything with class 'hidden'
+    document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
+  }, []); // empty array = run once (like <script> on page load)
+
     return (
         <>
             <div className="Animation_wrapper">
@@ -66,27 +82,27 @@ function Feaature() {
                         <h2>{t("Feature1H")}</h2>
                         <p>{t("Feature1")}</p>
                     </div>
-                    <div className="feature-card">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={faq_icon} alt="" srcSet="" />
                         <h2>{t("Feature2H")}</h2>
                         <p>{t("Feature2")}</p>
                     </div>
-                    <div className="feature-card">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={university_icon} alt="" srcSet="" />
                         <h2>{t("Feature3H")}</h2>
                         <p>{t("Feature3")}</p>
                     </div>
-                    <div className="feature-card">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={knowledge_icon} alt="" srcSet="" />
                         <h2>{t("Feature4H")}</h2>
                         <p>{t("Feature4")}</p>
                     </div>
-                    <div className="feature-card">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={cost_icon} alt="" srcSet="" />
                         <h2>{t("Feature5H")}</h2>
                         <p>{t("Feature5")}</p>
                     </div>
-                    <div className="feature-card">
+                    <div className="feature-card hidden">
                         <img className='feature-logo' src={privacy_icon} alt="" srcSet="" />
                         <h2>{t("Feature6H")}</h2>
                         <p>{t("Feature6")}</p>
@@ -97,17 +113,7 @@ function Feaature() {
         </>
     )
 }
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
 
-const hiidenElemnt = document.querySelectorAll(".hidden")
-hiidenElemnt.forEach((el) => observer.observe(el)) 
+
+
 export default Feaature;

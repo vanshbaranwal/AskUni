@@ -881,12 +881,26 @@ body{
   margin: 0;
 }
 
+/* adding-animation */
+
 .hidden{
   opacity: 0;
-  transition: all 10s;
+  filter: blur(4px);
+  transform: translateX(-100%);
+  transition: all 1s;
 }
 
 .show{
  opacity: 1;
+ filter:blur(0);
+ transform: translateX(0);
  
+}
+
+.feature-card:nth-child(2),.feature-card:nth-child(4){
+  transition-delay: 100ms;
+}
+
+.feature-card:nth-child(3),.feature-card:nth-child(6){
+  transition-delay: 200ms;
 }

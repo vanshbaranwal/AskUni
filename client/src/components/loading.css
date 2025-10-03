@@ -1,0 +1,127 @@
+@property --p {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --r {
+  syntax: '<length-percentage>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+@property --x {
+  syntax: '<length-percentage>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+@property --y {
+  syntax: '<length-percentage>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+.main-loader,
+.loader-container,
+.load,
+.load::before,
+.load::after {
+  display: grid;
+}
+
+.main-loader {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  place-items: center;
+  height: 100vh;
+}
+
+.loader-container {
+  place-items: center;
+  font: 900 3em cousine; 
+  width: 100%;
+  height: 100%;
+  grid-area: 1 / 1;
+}
+
+.loader-container::before {
+  padding: 3em; 
+  border-radius: 0.5em;
+  content: '';
+  grid-area: 1 / 1;
+}
+
+.load {
+  counter-reset: p var(--p);
+  mix-blend-mode: lighten;
+  animation: p 6s linear infinite;
+  grid-area: 1 / 1;
+}
+
+/* gradient base */
+.load::before,
+.load::after {
+  background: linear-gradient(90deg, #43d9c0 0%, #57c7b6 50%, #53aded 100%);
+}
+
+.load::before {
+  --x: 0.25em; 
+  --y: 0.25em;
+  --r: calc(100% - 0.5em);
+  --rond: red calc(0.25em - 1px), #0000 0.25em;
+  --mask:
+    radial-gradient(circle at var(--x) var(--y), var(--rond)),
+    radial-gradient(closest-side,
+      #0000 var(--r),
+      red calc(var(--r) + 1px) calc(100% - 1px),
+      #0000),
+    conic-gradient(red calc(var(--p)*1%), #0000 0%),
+    radial-gradient(circle at 50% 0.25em, var(--rond));
+
+  padding: 2.5em;
+  border-radius: 0.5em;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  -webkit-mask-composite: source-over, source-in;
+          mask-composite: add, intersect;
+
+  animation:
+    r 6s ease-out infinite,
+    x 1.5s cubic-bezier(.365,0,.635,1) -0.75s infinite alternate,
+    y 1.5s cubic-bezier(.365,0,.635,1) infinite alternate;
+
+  content: '';
+  grid-area: 1 / 1;
+}
+
+.load::after {
+  place-items: center;
+  -webkit-background-clip: text;
+  color: transparent;
+  mix-blend-mode: difference;
+  content: counter(p) '%';
+  grid-area: 1 / 1;
+}
+
+@keyframes p {
+  50%, 100% { --p: 100; }
+}
+
+@keyframes r {
+  0%, 50% { --r: calc(100% - 0.5em); }
+  75%, 100% { --r: -1px; }
+}
+
+@keyframes x {
+  100% { --x: calc(100% - 0.25em); }
+}
+
+@keyframes y {
+  100% { --y: calc(100% - 0.25em); }
+}
+
+.remove {
+  display: none;
+}
