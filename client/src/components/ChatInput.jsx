@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import send_icon from "/icons/send .png"
 
 export default function ChatInput({ messages, setMessages, currentUserId }) {
   const [input, setInput] = useState("");
@@ -57,8 +58,10 @@ export default function ChatInput({ messages, setMessages, currentUserId }) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
       />
-      <button onClick={sendMessage} disabled={loading}>
-        {loading ? "..." : "Send"}
+      
+      <button  onClick={sendMessage} disabled={loading}>
+        <img className="send-btn" src={send_icon} alt="" />
+        {loading ? "" : ""}
       </button>
     </div>
   );

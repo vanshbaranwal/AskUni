@@ -1,7 +1,7 @@
 export default function ChatHeader() {
   return (
     <div className="chat-header">
-      <h1>AskUni</h1>
+      <h2>AskUni</h2>
     </div>
   );
 }

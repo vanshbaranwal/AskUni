@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import Messages from "./Messages";
 import ChatInput from "./ChatInput";
 import axios from "axios";
+import "./chat.css";
 
 export default function Chat() {
   const { user } = useUser();
@@ -45,6 +46,7 @@ export default function Chat() {
 
   return (
     <div className="chat-app">
+     
       <Sidebar
         chatHistory={chatHistory}
         setChatHistory={setChatHistory}

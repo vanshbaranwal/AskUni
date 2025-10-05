@@ -44,6 +44,7 @@ export default function Sidebar({
       <button className="new-chat" onClick={startNewChat}>
         + New Chat
       </button>
+      
 
       <h2>History</h2>
       <div className="chat-history">
@@ -59,6 +60,9 @@ export default function Sidebar({
           </div>
         ))}
       </div>
+      {/* <button>
+        SignedIn
+      </button> */}
     </div>
   );
 }
