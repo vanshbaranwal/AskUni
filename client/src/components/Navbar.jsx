@@ -13,7 +13,7 @@ function Navbar() {
   const { t } = useTranslation();
   
   return (
-    <div className="Navbar_wapper">
+    <div className="Navbar_wapper" id="home">
       {/* Logo Section */}
       <div className="logo_container">
         <svg
@@ -96,10 +96,10 @@ function Navbar() {
             <div className="nav">
               <ul className="nav_list">
                 <li>
-                  <a href="#">{t("home")}</a>
+                  <a href="#home">{t("home")}</a>
                 </li> 
                 <li>
-                  <a href="#">{t("about")}</a>
+                  <a href="#about">{t("about")}</a>
                 </li>
                 <li>
                   <a href="#team">{t("team")}</a>
@@ -107,9 +107,7 @@ function Navbar() {
                 <li>
                   <Link to="/chat">{t("chat")}</Link>
                 </li>
-                <li>
-                  <a href="#">{t("contact")}</a>
-                </li>
+                
               </ul>
             </div>
           </div>

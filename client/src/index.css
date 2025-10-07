@@ -26,9 +26,9 @@ body, html, #root {
   padding: 16px;
   display: flex;
   flex-direction: column;
-      border-radius: 24px;
-    margin: 10px;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  margin: 10px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 .new-chat {
@@ -39,6 +39,7 @@ body, html, #root {
   color: white;
   font-weight: bold;
   border: none;
+  cursor: pointer;
 }
 
 .new-chat:hover {
@@ -57,6 +58,7 @@ body, html, #root {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-right: 4px; /* prevent scrollbar overlap */
 }
 
 .chat-preview {
@@ -67,16 +69,22 @@ body, html, #root {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  /* Extra styling for layout */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s;
+}
+
+.chat-preview:hover {
+  background-color: #dcdcdc;
 }
 
 .chat-preview div {
   flex: 1;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .chat-preview button {
@@ -93,6 +101,27 @@ body, html, #root {
   background-color: #e9555c;
 }
 
+.sidebar-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding-top: 12px;
+  margin-top: auto; 
+}
+
+.sidebar-footer .sign-out {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ff4d4f;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-footer .sign-out:hover {
+  background-color: #d9363e;
+}
 /* Main chat area */
 .main-chat {
   flex: 1;
@@ -910,4 +939,9 @@ body{
 
 .send-btn{
   height: 30px;
+}
+
+
+.Team-tittle{
+        font-size: 45px;
 }

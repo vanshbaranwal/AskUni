@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import axios from "axios";
 import { useEffect } from "react";
 import Loading from "./components/Loading";
+import About from "./components/About";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Navbar />
               <Landing_page />
               <Feaature />
+              <About />
               <Team />
               < Footer />
             </>

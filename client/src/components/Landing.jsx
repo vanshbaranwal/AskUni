@@ -52,7 +52,7 @@ function Landing_page() {
       </div>
 
       {/* Landing Page Content */}
-      <div className="Landing_page_info">
+      <div className="Landing_page_info" >
         <div className="wrapper_heading">
           <h1>{t("heroText")}</h1>
           <p>{t("spanText")}</p>

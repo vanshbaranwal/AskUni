@@ -1,42 +1,35 @@
-
 .chat-app {
     /* Use a fallback color for browsers that don't support gradients */
-  background-color: #f0f8ff; 
-  
-  /* Layering multiple radial gradients to create the soft, non-linear blend */
-  background-image: 
-    /* 1. Lightened Pink Glow (Bottom Left) */
-    radial-gradient(
-      circle at 10% 90%, 
-      #ffb4f0 0%, /* Lighter Pink */
-      #ffb4f055 30%, /* Semi-transparent Pink for soft edge */
-      transparent 70%
-    ),
-    /* 2. Blue Glow (Bottom Right) */
-    radial-gradient(
-      circle at 90% 90%, 
-      #53aded 0%, 
-      #53aded55 30%, 
-      transparent 70%
-    ),
-    /* 3. Teal/Mint Glow (Top Center) */
-    radial-gradient(
-      circle at 50% 5%, 
-      #43d9c0 0%, 
-      #43d9c055 30%, 
-      transparent 70%
-    ),
-    /* 4. Secondary Teal/Mint Glow (Top Right) */
-    radial-gradient(
-      circle at 80% 20%, 
-      #57c7b6 0%, 
-      #57c7b655 30%, 
-      transparent 70%
-    );
-  
-  /* Ensure the background covers the entire viewport */
-  min-height: 100vh;
-  margin: 0;
+    background-color: #f0f8ff;
+
+    /* Layering multiple radial gradients to create the soft, non-linear blend */
+    background-image:
+        /* 1. Lightened Pink Glow (Bottom Left) */
+        radial-gradient(circle at 10% 90%,
+            #ffb4f0 0%,
+            /* Lighter Pink */
+            #ffb4f055 30%,
+            /* Semi-transparent Pink for soft edge */
+            transparent 70%),
+        /* 2. Blue Glow (Bottom Right) */
+        radial-gradient(circle at 90% 90%,
+            #53aded 0%,
+            #53aded55 30%,
+            transparent 70%),
+        /* 3. Teal/Mint Glow (Top Center) */
+        radial-gradient(circle at 50% 5%,
+            #43d9c0 0%,
+            #43d9c055 30%,
+            transparent 70%),
+        /* 4. Secondary Teal/Mint Glow (Top Right) */
+        radial-gradient(circle at 80% 20%,
+            #57c7b6 0%,
+            #57c7b655 30%,
+            transparent 70%);
+
+    /* Ensure the background covers the entire viewport */
+    min-height: 100vh;
+    margin: 0;
 }
 
 /* Style for the actual message bubble */
@@ -70,7 +63,8 @@
 
 /* BOT Message Bubble (Wide, Light Background) */
 .message-bubble.bot {
-    max-width: 80%; /* Bot messages can still be wide to hold more text */
+    max-width: 80%;
+    /* Bot messages can still be wide to hold more text */
     background-color: #f7f7f7;
     border-bottom-left-radius: 4px;
     color: #333;
@@ -97,13 +91,13 @@
     width: fit-content;
     max-width: 50vw;
     /* 2. Maintains the maximum width limit */
-    
-    
+
+
     /* Remaining Styles */
-    background-color: #0069d9; 
+    background-color: #0069d9;
     color: white;
     border-bottom-right-radius: 4px;
-    border-top-left-radius: 20px; 
+    border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
@@ -113,69 +107,175 @@ for long text, similar to your first examples.
 */
 
 .message-bubble.bot {
-    max-width: 60vw; /* Bot messages can still be wide */
+    max-width: 60vw;
+    /* Bot messages can still be wide */
     /* ... other bot styles ... */
 }
+
+
+
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+.messages {
+    margin-bottom: 65px;
+
+}
+
+input:focus {
+    outline: none;
+    /* Removes the default blue/orange outline */
+    border: none;
+    /* Removes any existing border on focus */
+}
+
+input {
+    border: none !important;
+}
+
+.chat-input {
+    background-color: #fff;
+    border-radius: 24px;
+    margin-bottom: 12px;
+}
+
+.chat-input button {
+    background-color: #fff;
+}
+
+.chat-preview {
+    background: #fff;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.chat-header {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.chat-header .handburger-icon {
+
+        transform: translate(-15px, -24px);
+}
+
+
+.sidebar a{
+    display: none;
+}
+.chat-icon{
+    display: none;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
-    .sidebar{
+    .send-btn {
+    height: 19px;
+}
+.About-card{
+    font-size: 15px;
+}
+
+    .sidebar {
         display: none;
+        position: absolute;
+        height: 100%;
+        width: 50vw;
+        z-index: 30;
+        background-color: #fff;
     }
+
     .chat-header {
         position: fixed;
         justify-content: center;
         align-items: center;
         width: 100vw;
-    
+        display: flex;
+        justify-content: space-between;
+
     }
-    .messages{
+
+    .messages {
         margin-top: 150px;
+
+    }
+
+    .chat-input {
+        width: 100vw;
+        position: fixed;
+        height: 60px;
+
+
+    }
+
+    .chat-header .handburger-icon {
+            transform: translate(-10px, -25px);
         
     }
-    .chat-input{
-         width: 100vw ;
-         position: fixed;
-        height: 60px;
     
-    
+    .chat-icon{
+   transform: translateY(-6px);
+    display: block;
     }
-}    
-
-.messages::-webkit-scrollbar {
-        display: none;
+    .show{
+        display: block;
+    }
+    .new-chat {
+        width: 100%;
+    }
+    .sidebar a{
+    display: block;
 }
-.messages{
-    margin-bottom:65px ;
-    
-}
-
-input:focus {
-  outline: none; /* Removes the default blue/orange outline */
-  border: none; /* Removes any existing border on focus */
-}
-
-input{
-    border: none !important;
+.new-chat-container{
+    display: flex;
+    align-items: center;
+   
 }
 
-.chat-input{
-    background-color: #fff;
-    border-radius: 24px;
-    margin-bottom: 12px ;
+.cross{
+    margin: auto 0 ;
+    transform: translateY(-8px);
+    padding-left:6px ;
+}
+.sidebar{
+    top: 30px;
 }
 
-.chat-input button{
-    background-color: #fff;
 }
 
 .chat-preview{
-        background: #fff;
+    overflow: hidden;
 }
-.sidebar h2 {
-    text-align: center;
+.new-chat{
+    width: 100%;
+}
+.container-profile-r{
+    pointer-events: none;
+    transform: translateY(4px);
 }
 
-.chat-header{
-    font-size: 20px;
-    font-weight: bold;
+.About{
+    height: 50vh;
+    max-width: 1000px;
+    text-align: center;
+   
+    margin:auto;
+    height: fit-content;
     
 }
+.About-card{
+    height: fit-content;
+     font-size: 22px ;
+     padding: 10px;
+}
+
+.bloob-about{
+    z-index: -1;
+}
+

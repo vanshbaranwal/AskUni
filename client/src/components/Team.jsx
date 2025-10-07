@@ -30,7 +30,7 @@ function Team() {
         <section id="team">
             
             <div className=" Feature_wrapper ">
-                <div className="feature-title">
+                <div className="feature-title Team-tittle">
                     <h1>{t("team")}</h1>
                 </div>
                 <svg className="bloob-f-1" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">

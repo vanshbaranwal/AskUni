@@ -1,5 +1,12 @@
+
+import cross from "/icons/cross.png";
+import {
+  UserButton,
+} from "@clerk/clerk-react";
+
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { SignedIn, SignOutButton, useUser } from "@clerk/clerk-react";
 
 export default function Sidebar({
   chatHistory,
@@ -11,58 +18,103 @@ export default function Sidebar({
   setMessages,
   setActiveChatIndex,
 }) {
+  const { user } = useUser();
 
   const deleteChat = async (chatId, index) => {
-    const isSaved = Boolean(chatId); // check if chat is saved in backend
+    const isSaved = Boolean(chatId);
 
     try {
       if (isSaved) {
-        // Delete from backend
-        await axios.delete(`${import.meta.env.VITE_API_URL}/api/chats/${currentUserId}/${chatId}`);
+        await axios.delete(
+          `${import.meta.env.VITE_API_URL}/api/chats/${currentUserId}/${chatId}`
+        );
       }
-      
-      // Remove from local state
+
       const newHistory = [...chatHistory];
       newHistory.splice(index, 1);
       setChatHistory(newHistory);
 
-      // Clear main chat if deleted chat is active
       if (index === activeChatIndex) {
         setMessages([]);
         setActiveChatIndex(null);
       } else if (index < activeChatIndex) {
-        setActiveChatIndex(prev => prev - 1);
+        setActiveChatIndex((prev) => prev - 1);
       }
-
     } catch (err) {
       console.error("Failed to delete chat:", err);
     }
   };
 
+  const isNewChatDisabled = activeChatIndex !== null; // disable when viewing old chat
+  function  show_histoy(){
+    document.querySelector(".sidebar").classList.remove("show");
+    var side = document.querySelector(".sidebar");
+    console.log(side)
+  }
   return (
     <div className="sidebar">
-      <button className="new-chat" onClick={startNewChat}>
+      {/* New Chat Button */}
+      <div className="new-chat-container">
+      <button
+        className="new-chat"
+        onClick={() => {
+          if (!isNewChatDisabled) startNewChat();
+        }}
+        disabled={isNewChatDisabled}
+        style={{
+          opacity: isNewChatDisabled ? 0.5 : 1,
+          cursor: isNewChatDisabled ? "not-allowed" : "pointer",
+        }}
+      >
         + New Chat
       </button>
-      
-
+      <a  onClick={show_histoy} ><img  className="cross" height="21px" src={cross} alt="" /></a>
+        </div>
+      {/* Chat History */}
       <h2>History</h2>
       <div className="chat-history">
         {chatHistory.map((chat, index) => (
-          <div key={index} className="chat-preview">
-            <div onClick={() => loadChat(index)}>
-              {chat.messages?.[0]?.content || "Empty chat"}
-            </div>
-           
-            <button onClick={() => deleteChat(chat._id, index)}>
+          <div
+            key={index}
+            className={`chat-preview ${
+              activeChatIndex === index ? "active" : ""
+            }`}
+            onClick={() => loadChat(index)}
+          >
+            <div>{chat.messages?.[0]?.content || "Empty chat"}</div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteChat(chat._id, index);
+              }}
+            >
               <DeleteIcon style={{ fontSize: 16 }} />
             </button>
           </div>
         ))}
       </div>
-      {/* <button>
-        SignedIn
-      </button> */}
+
+      {/* User Info + Sign Out */}
+      <div className="sidebar-footer">
+        <div className="container-profile-r"><UserButton/></div>
+        
+        <span>{user?.fullName}</span>
+        <SignedIn>
+          <SignOutButton>
+            <button className="sign-out">Sign Out</button>
+          </SignOutButton>
+        </SignedIn>
+      </div>
     </div>
   );
 }
+
+
+
+{/* <div className="sidebar">
+      <div className="new-chat-container">
+        <button className="new-chat" onClick={startNewChat}>
+        + New Chat
+      </button>
+      <a  onClick={show_histoy} ><img  className="cross" height="21px" src={cross} alt="" /></a>
+      </div> */}

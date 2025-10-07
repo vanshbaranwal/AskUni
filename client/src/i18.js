@@ -36,6 +36,9 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature6H:"Privacy by Design",
                 Feature6:"Students often hesitate to ask “silly” doubts in front of others",
 
+                about:"About",
+                about_p:"AskUni is an AI-powered multilingual campus assistant that simplifies student life. Supporting Hindi, English, Rajasthani, and more, it answers queries on admissions, fees, timetables, scholarships, and events instantly—no more PDFs or queues.For colleges, AskUni reduces staff workload, ensures consistent communication, and promotes inclusivity. With seamless integration and smart updates, it’s the digital bridge between students and institutions.",
+
                 team:"Team",
                 role:"Role",
                 t1:"Rudraksha Keshari",
@@ -81,6 +84,9 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature5:"कम इन्फ्रास्ट्रक्चर की आवश्यकता (साधारण सर्वर + क्लाउड)।",
                 Feature6H:" प्राइवेसी बाय डिज़ाइन ",
                 Feature6:"छात्र अक्सर साधारण सवाल दूसरों के सामने पूछने में संकोच करते हैं।",
+
+                about:"विवरण",
+                about_p:"AskUni एक एआई-संचालित बहुभाषी कैंपस सहायक है जो छात्रों के जीवन को सरल बनाता है। यह हिंदी, अंग्रेज़ी, राजस्थानी और अन्य भाषाओं का समर्थन करता है, और प्रवेश, फीस, टाइमटेबल, छात्रवृत्ति, और कार्यक्रमों से जुड़ी पूछताछ का तुरंत जवाब देता है — अब पीडीएफ़ खोजने या कतार में लगने की ज़रूरत नहीं।कॉलेजों के लिए, AskUni स्टाफ का काम कम करता है, सुसंगत संचार सुनिश्चित करता है, और समावेशिता को बढ़ावा देता है।अपने सरल एकीकरण (integration) और स्मार्ट अपडेट सिस्टम के साथ, यह छात्रों और संस्थानों के बीच का डिजिटल पुल (digital bridge) है।",
                 
                 team:"टीम",
                 role:"भूमिका",
@@ -126,6 +132,9 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 Feature5:"कम ढांचा चाही (बेसिक सर्वर + क्लाउड)।",
                 Feature6H:"गोपनीयता री रचना",
                 Feature6:"विद्यार्थी अकसर दूसरां री आगर “साधा” सवाल पूछण सूं झिझकता है।",
+
+                about:"विवरण",
+                about_p:"AskUni एक एआइ चालत बहुभासीय कैंपस सहायको है, जिको मकसद विद्यार्थीनो जीवन आसान बनावणो है। ई हिंदी, इंग्लिश, राजस्थानी अणि अरनी भाषां समझै है, अणि दाखला, फीस, टाइमटेबल, छात्रवृत्ति अणि कार्यक्रमां स्यूं जुड़ेला सवालां को झटपट जवाब देवै है — अब पीडीएफ़ां खोजण री या कतार में उभा रहण री जरूरत नै।कॉलेज खातर, AskUni स्टाफ़ रो काम घटावै है, समान बातचीत बनावै है, अणि सबने साथ लै समावेश बढ़ावै है।अपने सहेला जोड़ (integration) अणि स्मार्ट अपडेट सिस्टम स्यूं, ई विद्यार्थी अणि संस्थान बीच रो डिजिटल पूल है।",
 
                 
                 team:"टीम",
