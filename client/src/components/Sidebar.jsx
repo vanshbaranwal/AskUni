@@ -1,12 +1,7 @@
-
 import cross from "/icons/cross.png";
-import {
-  UserButton,
-} from "@clerk/clerk-react";
-
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { SignedIn, SignOutButton, useUser } from "@clerk/clerk-react";
+import { UserButton, SignedIn, SignOutButton, useUser } from "@clerk/clerk-react";
 
 export default function Sidebar({
   chatHistory,
@@ -20,9 +15,16 @@ export default function Sidebar({
 }) {
   const { user } = useUser();
 
+  // When user clicks “New Chat”
+  const handleNewChat = () => {
+    startNewChat(); // uses logic from Chat.jsx (resets activeChatId & messages)
+    setActiveChatIndex(null);
+    setMessages([]);
+  };
+
+  // Delete a specific chat
   const deleteChat = async (chatId, index) => {
     const isSaved = Boolean(chatId);
-
     try {
       if (isSaved) {
         await axios.delete(
@@ -30,6 +32,7 @@ export default function Sidebar({
         );
       }
 
+      // remove from local state
       const newHistory = [...chatHistory];
       newHistory.splice(index, 1);
       setChatHistory(newHistory);
@@ -45,59 +48,56 @@ export default function Sidebar({
     }
   };
 
-  const isNewChatDisabled = activeChatIndex !== null; // disable when viewing old chat
-  function  show_histoy(){
-    document.querySelector(".sidebar").classList.remove("show");
-    var side = document.querySelector(".sidebar");
-    console.log(side)
-  }
+  // for mobile — hide sidebar
+  const hideSidebar = () => {
+    document.querySelector(".sidebar")?.classList.remove("show");
+  };
+
   return (
     <div className="sidebar">
-      {/* New Chat Button */}
+      {/* New Chat + Cross */}
       <div className="new-chat-container">
-      <button
-        className="new-chat"
-        onClick={() => {
-          if (!isNewChatDisabled) startNewChat();
-        }}
-        disabled={isNewChatDisabled}
-        style={{
-          opacity: isNewChatDisabled ? 0.5 : 1,
-          cursor: isNewChatDisabled ? "not-allowed" : "pointer",
-        }}
-      >
-        + New Chat
-      </button>
-      <a  onClick={show_histoy} ><img  className="cross" height="21px" src={cross} alt="" /></a>
-        </div>
+        <button className="new-chat" onClick={handleNewChat}>
+          + New Chat
+        </button>
+        <a onClick={hideSidebar}>
+          <img className="cross" height="21px" src={cross} alt="close" />
+        </a>
+      </div>
+
       {/* Chat History */}
       <h2>History</h2>
       <div className="chat-history">
-        {chatHistory.map((chat, index) => (
-          <div
-            key={index}
-            className={`chat-preview ${
-              activeChatIndex === index ? "active" : ""
-            }`}
-            onClick={() => loadChat(index)}
-          >
-            <div>{chat.messages?.[0]?.content || "Empty chat"}</div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                deleteChat(chat._id, index);
-              }}
+        {chatHistory.length === 0 ? (
+          <p className="no-chat">No chats yet</p>
+        ) : (
+          chatHistory.map((chat, index) => (
+            <div
+              key={chat._id || index}
+              className={`chat-preview ${
+                activeChatIndex === index ? "active" : ""
+              }`}
+              onClick={() => loadChat(index)}
             >
-              <DeleteIcon style={{ fontSize: 16 }} />
-            </button>
-          </div>
-        ))}
+              <div>{chat.messages?.[0]?.content || "Empty chat"}</div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteChat(chat._id, index);
+                }}
+              >
+                <DeleteIcon style={{ fontSize: 16 }} />
+              </button>
+            </div>
+          ))
+        )}
       </div>
 
-      {/* User Info + Sign Out */}
+      {/* Footer with User Info */}
       <div className="sidebar-footer">
-        <div className="container-profile-r"><UserButton/></div>
-        
+        <div className="container-profile-r">
+          <UserButton />
+        </div>
         <span>{user?.fullName}</span>
         <SignedIn>
           <SignOutButton>
@@ -108,13 +108,3 @@ export default function Sidebar({
     </div>
   );
 }
-
-
-
-{/* <div className="sidebar">
-      <div className="new-chat-container">
-        <button className="new-chat" onClick={startNewChat}>
-        + New Chat
-      </button>
-      <a  onClick={show_histoy} ><img  className="cross" height="21px" src={cross} alt="" /></a>
-      </div> */}

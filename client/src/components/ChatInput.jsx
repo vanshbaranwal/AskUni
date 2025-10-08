@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import send_icon from "/icons/send .png"
+import send_icon from "/icons/send .png";
 
-export default function ChatInput({ messages, setMessages, currentUserId }) {
+export default function ChatInput({ messages, setMessages, currentUserId, activeChatId, setActiveChatId }) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -27,9 +27,11 @@ export default function ChatInput({ messages, setMessages, currentUserId }) {
     setMessages((prev) => [...prev, typingMessage]);
 
     try {
+      // Include chatId if exists
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, {
-        userId: currentUserId, // Pass logged-in user ID
+        userId: currentUserId,
         message: input,
+        chatId: activeChatId || null,
       });
 
       const botMessage = {
@@ -38,6 +40,12 @@ export default function ChatInput({ messages, setMessages, currentUserId }) {
       };
 
       setMessages((prev) => [...prev.slice(0, -1), botMessage]);
+
+      //  Save chatId for this session
+      if (!activeChatId && res.data.chatId) {
+        setActiveChatId(res.data.chatId);
+      }
+
     } catch (error) {
       console.error(error);
       setMessages((prev) => [
@@ -59,7 +67,7 @@ export default function ChatInput({ messages, setMessages, currentUserId }) {
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
       />
       
-      <button  onClick={sendMessage} disabled={loading}>
+      <button onClick={sendMessage} disabled={loading}>
         <img className="send-btn" src={send_icon} alt="" />
         {loading ? "" : ""}
       </button>

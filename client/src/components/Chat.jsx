@@ -14,6 +14,7 @@ export default function Chat() {
   const [chatHistory, setChatHistory] = useState([]);   
   const [activeChatIndex, setActiveChatIndex] = useState(null); 
   const [messages, setMessages] = useState([]);         
+  const [activeChatId, setActiveChatId] = useState(null); // track current chat ID
 
   // Load chat history from backend on mount
   useEffect(() => {
@@ -31,22 +32,26 @@ export default function Chat() {
     fetchChats();
   }, [currentUserId]);
 
+  // Start a new chat
   const startNewChat = () => {
-    if (messages.length > 0) {
-      setChatHistory([...chatHistory, { userId: currentUserId, messages }]);
+    if (messages.length > 0 && activeChatId) {
+      setChatHistory([...chatHistory, { _id: activeChatId, messages }]);
     }
     setMessages([]);
+    setActiveChatId(null);
     setActiveChatIndex(null);
   };
 
+  //  Load an existing chat
   const loadChat = (index) => {
-    setMessages(chatHistory[index]?.messages || []);
+    const selectedChat = chatHistory[index];
+    setMessages(selectedChat?.messages || []);
     setActiveChatIndex(index);
+    setActiveChatId(selectedChat?._id || null);
   };
 
   return (
     <div className="chat-app">
-     
       <Sidebar
         chatHistory={chatHistory}
         setChatHistory={setChatHistory}
@@ -65,6 +70,8 @@ export default function Chat() {
             messages={messages}
             setMessages={setMessages}
             currentUserId={currentUserId}
+            activeChatId={activeChatId}          
+            setActiveChatId={setActiveChatId}     
           />
         )}
       </div>
