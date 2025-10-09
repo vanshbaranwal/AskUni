@@ -395,32 +395,37 @@ h1 a {
     background-color: #ffffff7d;
     
 }
-.Animation_wrapper .bloob1{
+.bloob1{
    position: absolute;
-   top: 0%;
-   right: 60%;
+  z-index: -2;
+  filter: blur(40px);
+   right: 65%;
    
    animation: bloob_a 10s infinite;
    animation-timing-function: linear;
+   animation-delay: 4s;
    
 }
 
 
 @keyframes bloob_a {
     35%{
-        top: 0%;
+        y: 0;
+        transform: translateY(0);
         right:10%;
         transform:rotate(30deg);
     }
     50%{
-        top: 10%;
+        y: 50px;
+        transform: translateY(150px);
         right: 10%;
 
         transform:rotate(60deg)
     }
     100%{
-        top: 0%;
-        right: 60%;
+        y: 0;
+        transform: translateY(0);
+        right: 65%;
         transform:rotate(0deg)
     }
 
@@ -433,6 +438,7 @@ h1 a {
     top: -10%;
     animation: bloob_b 10s infinite;
     animation-timing-function: ease-out;
+    animation-delay: 4s;
     
 
 }
@@ -944,4 +950,8 @@ body{
 
 .Team-tittle{
         font-size: 45px;
+}
+
+.a-tag{
+    margin: 0 7px 0 0 !important;
 }

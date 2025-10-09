@@ -10,9 +10,9 @@ function Loading() {
         return () => clearTimeout(timeoutId); // cleanup if component unmounts
     }, []);
     return (
-        <div class="main-loader">
-            <div class="loader-container">
-                <div class="load"></div>
+        <div className="main-loader">
+            <div className="loader-container">
+                <div className="load"></div>
             </div>
         </div>
     );

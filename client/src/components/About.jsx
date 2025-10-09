@@ -7,7 +7,10 @@ export default function About (){
         <>
         
         <div className="container-about" id="about">
-            <svg className="bloob-f-2 bloob-about" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">
+           
+
+            <div className="feature-title About ">
+                     <svg className="bloob-f-1 bloob-about" height="270" viewBox="0 0 407 302" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_29_22)">
                         <path d="M343.014 245.475C279.042 295.461 59.2215 315.926 13.4857 257.393C-32.25 198.86 113.418 83.4944 177.391 33.5082C241.363 -16.4781 330.3 -9.54967 376.036 48.9832C421.771 107.516 406.987 195.488 343.014 245.475Z" fill="url(#paint0_linear_29_22)" />
                     </g>
@@ -30,10 +33,8 @@ export default function About (){
                     </defs>
                 </svg>
                
-
-            <div className="feature-title About">
-                    <h1>{t ("about")}</h1>
-                   <div className="feature-card About-card">
+                    <h1>{t ("about_h")}</h1>
+                   <div className="feature-card About-card hidden">
                      <p> {t ("about_p")}</p>
                    </div>
             </div>

@@ -279,3 +279,8 @@ input {
     z-index: -1;
 }
 
+.no-chat{
+    margin-top: 12px;
+    text-align: center;
+}
+

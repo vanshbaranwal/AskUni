@@ -107,6 +107,9 @@ function Navbar() {
                 <li>
                   <Link to="/chat">{t("chat")}</Link>
                 </li>
+                <li>
+                  <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=askunichatbot@gmail.com">{t("contact")}</a>
+                </li>
                 
               </ul>
             </div>

@@ -17,8 +17,7 @@ export default function Messages({ messages }) {
         
         {/* Bot Message Bubble */}
         <div className="message-bubble bot">
-          Hi there! 👋 I’m AskUni, here to make student life at Microtek College, Varanasi easier 🏫.
-          No more searching PDFs or standing in queues — just ask me about fees, admissions, classes, scholarships, events, and I’ll answer instantly in your preferred language.
+          Hi there! 👋 I’m AskUni, here to make student life at Microtek College, Varanasi easier 🏫. No more searching PDFs or standing in queues — just ask me about fees, admissions, or even detailed queries about BCA and BBA courses. I’ll answer instantly in your preferred language — including Hindi, Rajasthani and English.
         </div>
       </div>
       
